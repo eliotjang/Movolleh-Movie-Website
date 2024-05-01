@@ -2,7 +2,7 @@ import { fetchData, searchData } from './tmdb-api/api.js';
 import {
   setupPaginationButtons,
   updatePageNumbers,
-} from './paination/pagination.js';
+} from './pagination/pagination.js';
 import { renderMovieList, makeMovieList } from './render.js';
 import { searchFunc } from './search/search.js';
 //파일간에 상태유지를 위해서 선언.

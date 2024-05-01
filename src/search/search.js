@@ -1,6 +1,6 @@
 import { fetchData, searchData } from '../tmdb-api/api.js';
 import { renderMovieList, makeMovieList } from '../render.js';
-import { updatePageNumbers } from '../paination/pagination.js';
+import { updatePageNumbers } from '../pagination/pagination.js';
 import { state } from '../state.js';
 
 export const searchFunc = async (searchedString) => {
