@@ -1,2 +1,11 @@
 # Movolleh-Movie-Website
-use TMDB Open API for team project
+
+# Movie Search Application
+
+## Layout
+
+## Features
+
+## Skills
+
+## Project Configuration
