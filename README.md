@@ -1,7 +1,5 @@
 # Movolleh-Movie-Website
 
-# Movie Search Application
-
 ## Layout
 
 ## Features
