@@ -1,20 +1,19 @@
 import { fetchData } from '../tmdb-api/api.js';
-import { state } from '../state.js';
+import stateManager from '../state.js';
 
 import { renderMovieList } from '../render.js';
 
 export const setupPaginationButtons = () => {
+  const state = stateManager.getState();
   const firstPage = document.getElementById('firstPage');
-  firstPage.style.display = state.currentPage === 1 ? 'none' : 'block';
-
   const prevPage = document.getElementById('prev');
-  prevPage.style.display = state.currentPage === 1 ? 'none' : 'block';
-
   const lastPage = document.getElementById('lastPage');
+  const nextPage = document.getElementById('next');
+
+  firstPage.style.display = state.currentPage === 1 ? 'none' : 'block';
+  prevPage.style.display = state.currentPage === 1 ? 'none' : 'block';
   lastPage.style.display =
     state.currentPage === state.total_pages ? 'none' : 'block';
-
-  const nextPage = document.getElementById('next');
   nextPage.style.display =
     state.currentPage === state.total_pages ? 'none' : 'block';
 
@@ -24,6 +23,7 @@ export const setupPaginationButtons = () => {
   lastPage.onclick = () => goToPage(state.total_pages);
 };
 export const updatePageNumbers = () => {
+  const state = stateManager.getState();
   const pageNumberContainer = document.getElementById('pageNumberContainer');
   pageNumberContainer.innerHTML = ''; // 기존 페이지네이션 버튼 삭제
 
@@ -41,6 +41,7 @@ const generatePageButtons = (startPage, endPage, pageNumberContainer) => {
 };
 // 페이지네이션 번호를 업데이트하는 함수
 const createPageButton = (pageNum, pageNumberContainer) => {
+  const state = stateManager.getState();
   const pageButton = document.createElement('button');
   pageButton.innerText = pageNum;
   pageButton.className = 'pageButton';
@@ -48,13 +49,7 @@ const createPageButton = (pageNum, pageNumberContainer) => {
     pageButton.style.backgroundColor = '#e50914';
   }
   pageButton.onclick = async () => {
-    state.currentPage = pageNum;
-    const data = await fetchData();
-    state.movieData = data.results;
-    if (data) {
-      renderMovieList();
-      updatePageNumbers();
-    }
+    await goToPage(pageNum);
   };
   pageNumberContainer.appendChild(pageButton);
 };
@@ -62,15 +57,17 @@ const createPageButton = (pageNum, pageNumberContainer) => {
 // //각 영화에 대한 HTML 요소를 생성
 
 const goToPage = async (pageNumber) => {
+  const state = stateManager.getState();
   if (
     pageNumber >= 1 &&
     pageNumber <= state.total_pages &&
     pageNumber !== state.currentPage
   ) {
-    state.currentPage = pageNumber;
+    stateManager.updateState({ currentPage: pageNumber });
+
     const data = await fetchData();
     if (data) {
-      state.movieData = data.results;
+      stateManager.updateState({ movieData: data.results });
       renderMovieList();
       updatePageNumbers();
       setupPaginationButtons();

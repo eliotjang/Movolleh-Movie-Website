@@ -1,7 +1,8 @@
 import { options } from './option.js';
-import { state } from '../state.js';
+import stateManager from '../state.js';
 export const fetchData = async () => {
   try {
+    const state = stateManager.getState();
     const endpoint = state.isSearching
       ? `https://api.themoviedb.org/3/search/movie?query=${state.currentSearchQuery}&include_adult=true&language=en-US&page=${state.currentPage}`
       : `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${state.currentPage}`;
@@ -17,7 +18,9 @@ export const fetchData = async () => {
   }
 };
 export const searchData = async () => {
-  state.isSearching = true;
+  stateManager.updateState({ isSearching: true });
+  const state = stateManager.getState();
+
   try {
     const res = await fetch(
       `https://api.themoviedb.org/3/search/movie?query=${state.currentSearchQuery}&include_adult=true&language=en-US&page=${state.currentPage}`,

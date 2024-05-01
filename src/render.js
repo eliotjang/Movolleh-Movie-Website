@@ -1,5 +1,5 @@
-import { state } from './state.js';
 import { openModal } from './modal/modal.js';
+import stateManager from './state.js';
 // 새롭게 영화들을 렌더링 하기 이전에 페이지 초기화
 export const renderMovieList = () => {
   const $movieList = document.querySelector('.movieList');
@@ -9,6 +9,7 @@ export const renderMovieList = () => {
 
 // //각 영화에 대한 HTML 요소를 생성
 export const makeMovieList = ($container) => {
+  const state = stateManager.getState();
   state.movieData.forEach((movie) => {
     const $movie = document.createElement('div');
     $movie.className = 'movie';
