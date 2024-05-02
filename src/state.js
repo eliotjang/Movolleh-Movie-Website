@@ -4,8 +4,8 @@ class StateManager {
       isSearching: false,
       currentPage: 1,
       total_pages: 0,
-      currentSearchQuery: '',
-      movieData: [],
+      currentSearchQuery: "",
+      movieData: []
     };
   }
   getState() {
@@ -13,7 +13,7 @@ class StateManager {
   }
   updateState(newState) {
     this._state = { ...this._state, ...newState };
-    console.log('State updated:', this._state);
+    console.log("State updated:", this._state);
   }
 }
 

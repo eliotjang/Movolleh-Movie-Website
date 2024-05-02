@@ -1,5 +1,5 @@
-import { options } from './option.js';
-import stateManager from '../state.js';
+import { options } from "./option.js";
+import stateManager from "../state.js";
 export const fetchData = async () => {
   try {
     const state = stateManager.getState();
@@ -9,11 +9,11 @@ export const fetchData = async () => {
 
     const res = await fetch(endpoint, options);
     if (!res.ok) {
-      throw new Error('에러발생!!');
+      throw new Error("에러발생!!");
     }
     return await res.json();
   } catch (error) {
-    console.error('Fetch error:', error);
+    console.error("Fetch error:", error);
     throw error;
   }
 };
@@ -27,11 +27,11 @@ export const searchData = async () => {
       options
     );
     if (!res.ok) {
-      throw new Error('에러발생!!');
+      throw new Error("에러발생!!");
     }
     return await res.json();
   } catch (error) {
-    console.error('Fetch error:', error);
+    console.error("Fetch error:", error);
     throw error;
   }
 };
