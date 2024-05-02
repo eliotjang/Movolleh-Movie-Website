@@ -22,7 +22,7 @@ export const makeMovieList = ($container) => {
     $movie.id = movie.id;
     $container.appendChild($movie);
     $movie.addEventListener("click", () => {
-      openModal(`영화 id: ${movie.id}`);
+      window.location.href = `movieDetail.html?id=${movie.id}`;
     });
 
     // 영화 카드 마우스 오버 시 실행
