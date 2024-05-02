@@ -35,3 +35,17 @@ export const searchData = async () => {
     throw error;
   }
 };
+
+export const fetchCreditData = async () => {
+  try {
+    const movieId = new URLSearchParams(location.search).get("id"); //URL에서 id값을 가져오는 방법!
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=ko-KR`, options);
+    if (!res.ok) {
+      throw new Error("에러발생!!");
+    }
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+};

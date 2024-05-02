@@ -10,7 +10,7 @@
 .mainContent {
   justify-content: space-around;
   padding: 20px;
-  width: 50%;
+  width: 58%;
   margin: 50px 50px 50px 50px;
   background-color: #ffffff;
   border-radius: 8px;
@@ -58,6 +58,10 @@
 .actorJob {
   margin-top: 40px;
 }
+.actor {
+  margin-right: 10px;
+}
+
 ol {
   display: flex;
   min-width: 100%;
