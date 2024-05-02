@@ -68,22 +68,39 @@ h2 {
 }
 
 .movie {
-  background-color: #000;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+
   transition: transform 0.3s ease;
 }
 
 .movie:hover {
   transform: translateY(-10px);
-  transition: transform 0.3s ease;
+  background-color: #000;
+  transition: transform 0.5s ease;
+  transition: 500ms linear;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+.movie:hover .movieTitle {
+  opacity: 1;
+  transition: transform 0.5s ease;
+}
+.movie:hover > img {
+  border-radius: 0;
+  transition: border-radius 0.5s;
+}
+/* 영화 카드 오버 시 나오는 제목 크기 조정 */
+.movieTitle {
+  font-size: 20px;
+  opacity: 0;
+  transition: 500ms linear;
 }
 
 .movie > img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
+  transition: 500ms linear;
 }
 
 .movie > p {
@@ -176,9 +193,4 @@ h2 {
 
 #topButton:hover {
   background-color: #ff0a16;
-}
-
-/* 영화 카드 오버 시 나오는 제목 크기 조정 */
-.movieTitle {
-  font-size: 20px;
 }
