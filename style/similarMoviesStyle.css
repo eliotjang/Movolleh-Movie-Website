@@ -1,0 +1,15 @@
+.moviesGrid {
+  /* border: 2px solid blue; */
+}
+
+.similarMovieCard {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+}
+
+.similarMovieCardImg {
+  /* 일정한 사진 크기 설정 */
+}
+
+.similarMovieCardImg img {
+}

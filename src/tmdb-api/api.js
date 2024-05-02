@@ -35,3 +35,19 @@ export const searchData = async () => {
     throw error;
   }
 };
+
+export const fetchSimilarMoviesData = async (similarMovieId) => {
+  try {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${similarMovieId}/similar?language=en-US&page=1`,
+      options
+    );
+    if (!res.ok) {
+      throw new Error("에러발생!!");
+    }
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+};
