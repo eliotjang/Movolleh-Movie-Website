@@ -7,7 +7,7 @@ export const renderMovieList = () => {
   makeMovieList($movieList);
 };
 
-// //각 영화에 대한 HTML 요소를 생성
+// 각 영화에 대한 HTML 요소를 생성
 export const makeMovieList = ($container) => {
   const state = stateManager.getState();
   state.movieData.forEach((movie) => {
@@ -15,14 +15,35 @@ export const makeMovieList = ($container) => {
     $movie.className = "movie";
     $movie.innerHTML = `
       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" />
-      <h2 class='movieTitle'>${movie.title}</h2>
-      <p>${movie.overview}</p>
-      <p class='rating'>Rating: ${movie.vote_average}</p>
+      <h2 class='movieTitle' style='display:none'>${movie.title}</h2>
+      <p style='display:none'>${movie.overview}</p>
+      <p style='display:none' class='rating'>Rating: ${movie.vote_average}</p>
     `;
     $movie.id = movie.id;
     $container.appendChild($movie);
     $movie.addEventListener("click", () => {
       openModal(`영화 id: ${movie.id}`);
     });
+
+    // 영화 카드 마우스 오버 시 실행
+    $movie.addEventListener("mouseenter", () => {
+      printTitle($movie);
+    });
+
+    // 영화 카드 마우스 오버 아웃 시 실행
+    $movie.addEventListener("mouseleave", () => {
+      deleteTitle($movie);
+    });
   });
+};
+
+// 영화 카드 마우스 오버 시 제목 출력
+const printTitle = (card) => {
+  const cardTitle = card.querySelector(".movieTitle");
+  cardTitle.style.display = "block";
+};
+// 영화 카드 마우스 오버 시 제목 제거
+const deleteTitle = (card) => {
+  const cardTitle = card.querySelector(".movieTitle");
+  cardTitle.style.display = "none";
 };

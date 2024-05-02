@@ -177,3 +177,8 @@ h2 {
 #topButton:hover {
   background-color: #ff0a16;
 }
+
+/* 영화 카드 오버 시 나오는 제목 크기 조정 */
+.movieTitle {
+  font-size: 20px;
+}
