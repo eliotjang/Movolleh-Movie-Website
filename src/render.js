@@ -15,29 +15,17 @@ export const makeMovieList = ($container) => {
     $movie.className = "movie";
     $movie.innerHTML = `
       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" />
-      <h2 class='movieTitle' style='display:none'>${movie.title}</h2>
-      <p style='display:none'>${movie.overview}</p>
-      <p style='display:none' class='rating'>Rating: ${movie.vote_average}</p>
+      <h2 class='movieTitle'>${movie.title}</h2>
     `;
     $movie.id = movie.id;
     $container.appendChild($movie);
     $movie.addEventListener("click", () => {
       window.location.href = `movieDetail.html?id=${movie.id}`;
     });
-
-    // 영화 카드 마우스 오버 시 실행
-    $movie.addEventListener("mouseenter", () => {
-      printTitle($movie);
-    });
-
-    // 영화 카드 마우스 오버 아웃 시 실행
-    $movie.addEventListener("mouseleave", () => {
-      deleteTitle($movie);
-    });
   });
 };
 
-// 영화 카드 마우스 오버 시 제목 출력
+/*영화 카드 마우스 오버 시 제목 출력
 const printTitle = (card) => {
   const cardTitle = card.querySelector(".movieTitle");
   cardTitle.style.display = "block";
@@ -47,3 +35,12 @@ const deleteTitle = (card) => {
   const cardTitle = card.querySelector(".movieTitle");
   cardTitle.style.display = "none";
 };
+ // 영화 카드 마우스 오버 시 실행
+ $movie.addEventListener("mouseenter", () => {
+  printTitle($movie);
+});
+
+// 영화 카드 마우스 오버 아웃 시 실행
+$movie.addEventListener("mouseleave", () => {
+  deleteTitle($movie);
+});*/
