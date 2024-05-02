@@ -12,8 +12,9 @@ class StateManager {
     return JSON.parse(JSON.stringify(this._state));
   }
   updateState(newState) {
-    this._state = { ...this._state, ...newState };
-    console.log("State updated:", this._state);
+    Object.keys(newState).forEach((key) => {
+      this._state[key] = newState[key];
+    });
   }
 }
 
