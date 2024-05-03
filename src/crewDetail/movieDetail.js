@@ -21,9 +21,9 @@ const getPoster = (fetchData) => {
 
 // 2# 영화 제목 넣는 함수
 const getMovieTitle = (fetchData) => {
-  const movieTitle = fetchData["title"];
-  let titleHTML = `${movieTitle}`;
-  const titleIn = document.getElementById("movieTitle");
+  const movieDetailTitle = fetchData["title"];
+  let titleHTML = `${movieDetailTitle}`;
+  const titleIn = document.getElementById("movieDetailTitle");
   titleIn.insertAdjacentHTML("BeforeEnd", titleHTML);
 };
 
