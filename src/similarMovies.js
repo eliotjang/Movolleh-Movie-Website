@@ -25,8 +25,9 @@ let printSimilarMovies = (data) => {
       const similarMovieCard = document.createElement("div");
       similarMovieCard.className = "similarMovieCard";
       similarMovieCard.innerHTML = `
-        <h2 class='movieTitle'>${data.results[countValidCard].title}</h2>
-      `;
+          <h2 class='movieTitle'>${data.results[countValidCard].title}</h2>
+        `;
+
       moviesGrid.appendChild(similarMovieCard);
 
       // div로 구분된 영화 카드 img 삽입
