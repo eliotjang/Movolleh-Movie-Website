@@ -94,7 +94,7 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.directorContent,
+.directorActorContent,
 .actorContent {
   margin-left: -30px;
   padding: 0px;
@@ -103,7 +103,7 @@ h2 {
   height: 280px;
   overflow-x: auto;
 }
-.directorJob {
+.directorActorJob {
   font-size: 25px;
   margin-bottom: 10px;
 }
@@ -112,6 +112,11 @@ h2 {
   margin-top: 40px;
   font-size: 25px;
   margin-bottom: 10px;
+}
+
+.director {
+  width: 180px;
+  margin-right: 0px;
 }
 
 .actor {
@@ -131,7 +136,6 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 80px;
 
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
