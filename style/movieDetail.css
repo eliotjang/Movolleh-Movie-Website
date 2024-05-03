@@ -1,4 +1,10 @@
 /* style/movieDetail.css */
+
+body {
+  background-color: #141414;
+  color: beige;
+}
+
 .headerSpace {
   height: 50px;
 }
@@ -12,7 +18,7 @@
   padding: 20px;
   width: 58%;
   margin: 50px 50px 50px 50px;
-  background-color: #ffffff;
+  border: 2px double;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -29,9 +35,25 @@
 
 .movieDetails {
   flex: 1;
-  padding: 0 20px;
+  padding: 30px;
   font-size: 22px;
-  color: #333;
+}
+
+.posterImage {
+  border-radius: 15px;
+}
+
+.movieDetailTitle {
+  display: flex;
+  margin-left: 25px;
+  margin-top: 15px;
+  font-size: 60px;
+}
+
+.movieOverview {
+  margin-left: 25px;
+  font-size: 30px;
+  line-height: 160%;
 }
 
 .creditContent {
@@ -40,14 +62,13 @@
   flex-direction: column;
   max-width: 1400px;
   margin: 50px 0px 50px 0px;
-  background-color: #ffffff;
+
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .directorContent,
 .actorContent {
-  background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -55,9 +76,15 @@
   overflow-x: auto;
   white-space: nowrap;
 }
+.directorJob {
+  font-size: 40px;
+}
+
 .actorJob {
   margin-top: 40px;
+  font-size: 40px;
 }
+
 .actor {
   margin-right: 10px;
 }
@@ -76,7 +103,7 @@ li {
   flex-direction: column;
   align-items: center;
   margin-right: 80px;
-  background-color: #ffffff;
+
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -87,8 +114,8 @@ li {
 .creditImage {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  max-width: 100%;
-  height: auto;
+  width: auto;
+  height: 175;
   border-radius: 8px;
 }
 
@@ -102,7 +129,6 @@ li {
 }
 
 .similarMovies {
-  background-color: #ffff;
   padding: 20px;
   height: 20%;
   margin: 50px auto;
@@ -112,7 +138,7 @@ li {
 
 .similarMovies h2 {
   text-align: center;
-  color: #333;
+
   margin-bottom: 10px;
 }
 
@@ -123,7 +149,6 @@ li {
 }
 
 .movie {
-  background-color: #ccc;
   padding: 5px;
   border-radius: 8px;
 }
