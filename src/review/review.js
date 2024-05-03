@@ -1,14 +1,24 @@
 const reviewContent = document.querySelector(".reviewContent");
 
-const table = document.createElement("table");
-const new_row = table.insertRow();
+let addRow = () => {
+  console.log("addRow");
+};
 
-const new_cell = new_row.insertCell(0);
-let cellHTML = `test`;
-new_cell.insertAdjacentHTML("afterbegin", cellHTML);
+let addTable = () => {
+  const reviewTable = document.createElement("table");
+  reviewTable.className = "reviewTable";
+  reviewTable.innerHTML = `
+    <table class="reviewTable">
+    <tr>
+    <td>리뷰 볼래?</td>
+    <td>작성자 볼래?</td>
+    <td>별점 볼래?</td>
+    <td><input type='button' value='작성' onclick='addRow()'</td>
+    </tr>
+    </table>
+    `;
 
-const new_cell2 = new_row.insertCell(1);
-let cellHTML2 = `test22`;
-new_cell2.insertAdjacentHTML("afterbegin", cellHTML2);
+  reviewContent.appendChild(reviewTable);
+};
 
-reviewContent.appendChild(table);
+addTable();
