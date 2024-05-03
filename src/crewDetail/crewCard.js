@@ -23,15 +23,15 @@ const introduceDirector = (director) => {
   let profilePath = director.profile_path;
   let name = director.name;
   let job = director.job;
-  let directorCardHTML = `
+  let directorActorCardHTML = `
                 <li class="director">
                   <img class="creditImage" src="https://www.themoviedb.org/t/p/w138_and_h175_bestv2${profilePath}" />
                   <p class="creditName">${name}</p>
                   <p class="character">${job}</p>
                 </li>
         `;
-  const directorCard = document.getElementById("directorCard");
-  directorCard.insertAdjacentHTML("BeforeEnd", directorCardHTML);
+  const directorActorCard = document.getElementById("directorActorCard");
+  directorActorCard.insertAdjacentHTML("BeforeEnd", directorActorCardHTML);
 };
 
 // 2# 출연진(cast) 소개카드 만들어서 붙이는 함수
@@ -46,7 +46,7 @@ const introduceCast = (cast) => {
                   <p class="character">${character}</p>
                 </li>
         `;
-  const castCard = document.getElementById("directorCard");
+  const castCard = document.getElementById("directorActorCard");
   castCard.insertAdjacentHTML("BeforeEnd", castCardHTML);
 };
 
