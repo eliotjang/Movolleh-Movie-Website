@@ -24,23 +24,3 @@ export const makeMovieList = ($container) => {
     });
   });
 };
-
-/*영화 카드 마우스 오버 시 제목 출력
-const printTitle = (card) => {
-  const cardTitle = card.querySelector(".movieTitle");
-  cardTitle.style.display = "block";
-};
-// 영화 카드 마우스 오버 아웃 시 제목 제거
-const deleteTitle = (card) => {
-  const cardTitle = card.querySelector(".movieTitle");
-  cardTitle.style.display = "none";
-};
- // 영화 카드 마우스 오버 시 실행
- $movie.addEventListener("mouseenter", () => {
-  printTitle($movie);
-});
-
-// 영화 카드 마우스 오버 아웃 시 실행
-$movie.addEventListener("mouseleave", () => {
-  deleteTitle($movie);
-});*/

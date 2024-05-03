@@ -36,6 +36,22 @@ export const searchData = async () => {
   }
 };
 
+export const fetchSimilarMoviesData = async (similarMovieId) => {
+  try {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${similarMovieId}/similar?language=ko-KR&page=1`,
+      options
+    );
+    if (!res.ok) {
+      throw new Error("에러발생!!");
+    }
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+};
+
 export const fetchCreditData = async () => {
   try {
     const movieId = new URLSearchParams(location.search).get("id"); //URL에서 id값을 가져오는 방법!
