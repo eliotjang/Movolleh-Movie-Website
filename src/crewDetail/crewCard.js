@@ -25,7 +25,7 @@ const introduceDirector = (director) => {
   let department = director.department;
   let directorCardHTML = `
                 <li class="director">
-                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_bestv2${profilePath}" />
+                  <img class="creditImage" src="https://www.themoviedb.org/t/p/w138_and_h175_bestv2${profilePath}" />
                   <p class="creditName">${name}</p>
                   <p class="character">${department}</p>
                 </li>
@@ -41,7 +41,7 @@ const introduceCast = (cast) => {
   let character = cast.character;
   let castCardHTML = `
                 <li class="actor">
-                  <img src="https://www.themoviedb.org/t/p/w138_and_h175_bestv2${profilePath}" />
+                  <img class="creditImage" src="https://www.themoviedb.org/t/p/w138_and_h175_bestv2${profilePath}" />
                   <p class="creditName">${name}</p>
                   <p class="character">${character}</p>
                 </li>
