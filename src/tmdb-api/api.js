@@ -39,7 +39,7 @@ export const searchData = async () => {
 export const fetchSimilarMoviesData = async (similarMovieId) => {
   try {
     const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${similarMovieId}/similar?language=en-US&page=1`,
+      `https://api.themoviedb.org/3/movie/${similarMovieId}/similar?language=ko-KR&page=1`,
       options
     );
     if (!res.ok) {
