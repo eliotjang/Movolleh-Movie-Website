@@ -16,14 +16,17 @@ const moviesGrid = document.querySelector(".moviesGrid");
 let printSimilarMovies = (data) => {
   let countValidCard = 0;
   for (let i = 0; i < 6; i++) {
-    // poster_path가 null인 경우 처리
+    // poster_path가 null, overview가 빈 문자열인 경우 처리
     const checkValidPoster = data.results[countValidCard].poster_path;
-    if (checkValidPoster === null) {
+    const checkValidOverview = data.results[countValidCard].overview;
+    if (checkValidPoster === null || checkValidOverview === "") {
+      console.log("test overview");
       i--;
     } else {
       // 영화 카드 div 구분
       const similarMovieCard = document.createElement("div");
       similarMovieCard.className = "similarMovieCard";
+      similarMovieCard.dataset.movieId = data.results[countValidCard].id;
       similarMovieCard.innerHTML = `
           <h2 class='movieTitle'>${data.results[countValidCard].title}</h2>
         `;
@@ -38,11 +41,11 @@ let printSimilarMovies = (data) => {
     countValidCard++;
   }
 
-  // 비슷한 영화 클릭 시 상세 페이지 설정
+  // 추천 영화 카드 클릭 시 해당 영화 상세 페이지 이동
   const similarMovieCards = document.querySelectorAll(".similarMovieCard");
   similarMovieCards.forEach((card, index) => {
     card.addEventListener("click", () => {
-      window.location.href = `movieDetail.html?id=${data.results[index].id}`;
+      window.location.href = `movieDetail.html?id=${card.dataset.movieId}`;
     });
   });
 };
