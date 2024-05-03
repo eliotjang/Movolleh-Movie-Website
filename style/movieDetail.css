@@ -42,7 +42,7 @@ h2 {
   justify-content: space-around;
   padding: 20px;
   width: 60%;
-  min-width: 800px;
+  min-width: 900px;
   margin: 50px 50px 50px 50px;
   border: 2px double;
   border-radius: 8px;
@@ -84,7 +84,6 @@ h2 {
 }
 
 .creditContent {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   max-width: 1400px;
@@ -94,24 +93,18 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.directorActorContent,
-.actorContent {
-  margin-left: -30px;
+.directorActorContent {
+  margin-left: -10px;
   padding: 0px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  height: 280px;
+  height: 340px;
   overflow-x: auto;
 }
 .directorActorJob {
   font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.actorJob {
-  margin-top: 40px;
-  font-size: 25px;
-  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-bottom: 15px;
 }
 
 .director {
