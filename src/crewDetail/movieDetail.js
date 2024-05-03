@@ -13,7 +13,7 @@ export const detailCard = async () => {
 const getPoster = (fetchData) => {
   const posterPath = fetchData["poster_path"];
   let posterHTML = `
-                <img class="posterImage" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2${posterPath}" />
+                <img class="posterImage" src="https://image.tmdb.org/t/p/w342${posterPath}" />
             `;
   const posterIn = document.getElementById("moviePoster");
   posterIn.insertAdjacentHTML("BeforeEnd", posterHTML);
@@ -36,9 +36,3 @@ const getMovieOverview = (fetchData) => {
 };
 
 detailCard(); // 총괄 함수 실행
-
-// 홈 버튼 추가 (이것도 함수화 시키려다가 실패 - 태권님 help)
-const renderLog = document.getElementById("detailLogo");
-renderLog.addEventListener("click", () => {
-  window.location.href = `index.html`;
-});

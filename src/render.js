@@ -24,9 +24,3 @@ export const makeMovieList = ($container) => {
     });
   });
 };
-
-// 홈 버튼 추가 (이것도 함수화 시키려다가 실패 - 태권님 help)
-const renderLog = document.getElementById("renderLogo");
-renderLog.addEventListener("click", () => {
-  window.location.href = `index.html`;
-});
