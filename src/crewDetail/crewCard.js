@@ -10,11 +10,11 @@ export const introduceCard = async () => {
       return v; // 제작진(crew) 중에서 감독을 찾아서 할당
     }
   });
-  for (let i = 0; i < 6; i++) {
-    introduceCast(cast[i]); // 2번함수 실행
+  for (let i = 0; i < 5; i++) {
     if (director.length > i) {
       introduceDirector(director[i]); // 1번함수 실행
     }
+    introduceCast(cast[i]); // 2번함수 실행
   }
 };
 
@@ -22,12 +22,12 @@ export const introduceCard = async () => {
 const introduceDirector = (director) => {
   let profilePath = director.profile_path;
   let name = director.name;
-  let department = director.department;
+  let job = director.job;
   let directorCardHTML = `
                 <li class="director">
                   <img class="creditImage" src="https://www.themoviedb.org/t/p/w138_and_h175_bestv2${profilePath}" />
                   <p class="creditName">${name}</p>
-                  <p class="character">${department}</p>
+                  <p class="character">${job}</p>
                 </li>
         `;
   const directorCard = document.getElementById("directorCard");
@@ -46,7 +46,7 @@ const introduceCast = (cast) => {
                   <p class="character">${character}</p>
                 </li>
         `;
-  const castCard = document.getElementById("actorCard");
+  const castCard = document.getElementById("directorCard");
   castCard.insertAdjacentHTML("BeforeEnd", castCardHTML);
 };
 
