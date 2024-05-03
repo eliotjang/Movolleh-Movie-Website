@@ -1,0 +1,50 @@
+.similarMovies {
+  /* border: solid red; */
+  font-size: 30px;
+  font-weight: bold;
+  /* background-color: #ffffff; */
+  background-color: #000000;
+}
+
+.similarMovieCard {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin-top: 40px;
+}
+
+.similarMovieCard:hover {
+  transform: translateY(-10px);
+  /* background-color: #000; */
+  background-color: #ddd8d8a3;
+  transition: transform 0.5s ease;
+  transition: 500ms linear;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+.similarMovieCard:hover .movieTitle {
+  opacity: 1;
+  transition: transform 0.5s ease;
+}
+.similarMovieCard:hover > img {
+  border-radius: 0;
+  transition: border-radius 0.5s;
+}
+/* 영화 카드 오버 시 나오는 제목 크기 조정 */
+.movieTitle {
+  font-size: 20px;
+  opacity: 0;
+  transition: 500ms linear;
+}
+
+.similarMovieCard > img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: 500ms linear;
+}
+
+.similarMovieCard > h2 {
+  margin: 10px;
+
+  color: #ccc;
+}
