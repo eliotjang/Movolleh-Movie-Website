@@ -1,9 +1,13 @@
 .similarMovies {
-  /* border: solid red; */
+  border: solid beige;
   font-size: 30px;
   font-weight: bold;
-  /* background-color: #ffffff; */
-  background-color: #000000;
+  width: 40%;
+  min-width: 400px;
+}
+
+.similarMovies > h2 {
+  color: white;
 }
 
 .similarMovieCard {
@@ -15,8 +19,7 @@
 
 .similarMovieCard:hover {
   transform: translateY(-10px);
-  /* background-color: #000; */
-  background-color: #ddd8d8a3;
+  background-color: #000;
   transition: transform 0.5s ease;
   transition: 500ms linear;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
