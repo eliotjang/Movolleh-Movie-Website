@@ -14,7 +14,7 @@ export const makeMovieList = ($container) => {
     const $movie = document.createElement("div");
     $movie.className = "movie";
     $movie.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" />
+      <img class='renderPoster' src="https://image.tmdb.org/t/p/w500${movie.poster_path}" />
       <h2 class='movieTitle'>${movie.title}</h2>
     `;
     $movie.id = movie.id;
@@ -24,3 +24,9 @@ export const makeMovieList = ($container) => {
     });
   });
 };
+
+// 홈 버튼 추가 (이것도 함수화 시키려다가 실패 - 태권님 help)
+const renderLog = document.getElementById("renderLogo");
+renderLog.addEventListener("click", () => {
+  window.location.href = `index.html`;
+});
