@@ -5,8 +5,8 @@ export const fetchData = async () => {
   try {
     const state = stateManager.getState();
     const endpoint = state.isSearching
-      ? `https://api.themoviedb.org/3/search/movie?query=${state.currentSearchQuery}&include_adult=true&language=ko-KR&page=${state.currentPage}`
-      : `https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=${state.currentPage}`;
+      ? `https://api.themoviedb.org/3/search/movie?query=${state.currentSearchQuery}&include_adult=true&language=en-US&page=${state.currentPage}`
+      : `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${state.currentPage}`;
 
     const res = await fetch(endpoint, options);
     if (!res.ok) {
@@ -25,7 +25,7 @@ export const searchData = async () => {
 
   try {
     const res = await fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${state.currentSearchQuery}&include_adult=true&language=ko-KR&page=${state.currentPage}`,
+      `https://api.themoviedb.org/3/search/movie?query=${state.currentSearchQuery}&include_adult=true&language=en-US&page=${state.currentPage}`,
       options
     );
     if (!res.ok) {
@@ -41,7 +41,7 @@ export const searchData = async () => {
 export const fetchSimilarMoviesData = async (similarMovieId) => {
   try {
     const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${similarMovieId}/similar?language=ko-KR&page=1`,
+      `https://api.themoviedb.org/3/movie/${similarMovieId}/similar?language=en-US&page=1`,
       options
     );
     if (!res.ok) {
@@ -57,7 +57,7 @@ export const fetchSimilarMoviesData = async (similarMovieId) => {
 export const fetchCreditData = async () => {
   try {
     const movieId = new URLSearchParams(location.search).get("id"); //URL에서 id값을 가져오는 방법!
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=ko-KR`, options);
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`, options);
     if (!res.ok) {
       throw new Error("에러발생!!");
     }
@@ -71,7 +71,7 @@ export const fetchCreditData = async () => {
 export const fetchDetailData = async () => {
   try {
     let movieId = new URLSearchParams(location.search).get("id");
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`, options);
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options);
     if (!res.ok) {
       throw new Error("에러발생!!");
     }

@@ -10,43 +10,48 @@ export const introduceCard = async () => {
       return v; // 제작진(crew) 중에서 감독을 찾아서 할당
     }
   });
-  for (let i = 0; i < 6; i++) {
-    introduceCast(cast[i]); // 2번함수 실행
+  for (let i = 0; i < 5; i++) {
     if (director.length > i) {
       introduceDirector(director[i]); // 1번함수 실행
     }
+    introduceCast(cast[i]); // 2번함수 실행
   }
 };
 
+//
 // 1# 감독(director) 소개카드 만들어서 붙이는 함수
 const introduceDirector = (director) => {
-  let profilePath = director.profile_path;
+  let profilePath = director.profile_path
+    ? `https://www.themoviedb.org/t/p/w138_and_h175_bestv2${director.profile_path}`
+    : `../../assets/nophoto.jpg`;
   let name = director.name;
-  let department = director.department;
-  let directorCardHTML = `
+  let job = director.job;
+  let directorActorCardHTML = `
                 <li class="director">
-                  <img class="creditImage" src="https://www.themoviedb.org/t/p/w138_and_h175_bestv2${profilePath}" />
+                  <img class="creditImage" src = ${profilePath} />
                   <p class="creditName">${name}</p>
-                  <p class="character">${department}</p>
+                  <p class="character">${job}</p>
                 </li>
         `;
-  const directorCard = document.getElementById("directorCard");
-  directorCard.insertAdjacentHTML("BeforeEnd", directorCardHTML);
+  const directorActorCard = document.getElementById("directorActorCard");
+  directorActorCard.insertAdjacentHTML("BeforeEnd", directorActorCardHTML);
 };
 
 // 2# 출연진(cast) 소개카드 만들어서 붙이는 함수
 const introduceCast = (cast) => {
-  let profilePath = cast.profile_path;
+  let profilePath = cast.profile_path
+    ? `https://www.themoviedb.org/t/p/w138_and_h175_bestv2${cast.profile_path}`
+    : `../../assets/nophoto.jpg`;
   let name = cast.name;
   let character = cast.character;
   let castCardHTML = `
                 <li class="actor">
-                  <img class="creditImage" src="https://www.themoviedb.org/t/p/w138_and_h175_bestv2${profilePath}" />
+                  <img class="creditImage" src="${profilePath}" />
                   <p class="creditName">${name}</p>
                   <p class="character">${character}</p>
                 </li>
         `;
-  const castCard = document.getElementById("actorCard");
+  const castCard = document.getElementById("directorActorCard");
   castCard.insertAdjacentHTML("BeforeEnd", castCardHTML);
 };
 
