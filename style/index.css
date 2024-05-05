@@ -84,6 +84,20 @@ h2 {
   background-color: #ff0a16;
 }
 
+.teamIntroducePoster {
+  background-size: cover;
+  background-image: url(https://blog.kakaocdn.net/dn/leYIi/btsHbORECO0/5gndv3E7Setlcbb2ZI9PGK/img.png);
+  height: 430px;
+  margin-bottom: 20px;
+}
+
+.teamIntroduceMention {
+  width: 400px;
+  height: 300px;
+  margin: 100px;
+  margin-left: 600px;
+}
+
 .movieList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
