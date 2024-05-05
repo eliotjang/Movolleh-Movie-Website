@@ -20,7 +20,6 @@ let printSimilarMovies = (data) => {
     const checkValidPoster = data.results[countValidCard].poster_path;
     const checkValidOverview = data.results[countValidCard].overview;
     if (checkValidPoster === null || checkValidOverview === "") {
-      console.log("test overview");
       i--;
     } else {
       // 영화 카드 div 구분

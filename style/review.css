@@ -1,0 +1,26 @@
+.reviewContent > h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+table {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  /* padding: 10px 20px; */
+  border: 1px solid black;
+  text-align: left;
+  height: 20px;
+}
+
+input {
+  font-size: 15px;
+}
+
+.reviewContent {
+  background-color: silver;
+  padding: 20px;
+}
