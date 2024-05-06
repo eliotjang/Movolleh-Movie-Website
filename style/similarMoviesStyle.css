@@ -51,3 +51,21 @@
 
   color: #ccc;
 }
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+.navigation button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #777; /* 원하는 색상 코드로 변경 가능 */
+  cursor: pointer;
+}
+
+.navigation button:hover {
+  color: red; /* 호버 시 색상 변경 */
+}
