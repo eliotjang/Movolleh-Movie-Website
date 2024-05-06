@@ -1,5 +1,5 @@
 .similarMovies {
-  border: solid beige;
+  border: 2px double;
   font-size: 30px;
   font-weight: bold;
   width: 40%;
@@ -8,6 +8,7 @@
 
 .similarMovies > h2 {
   color: white;
+  margin-top: 54px;
 }
 
 .similarMovieCard {
