@@ -1,6 +1,7 @@
 .reviewContent > h2 {
+  text-align: left;
   font-size: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 table {
@@ -21,6 +22,10 @@ input {
 }
 
 .reviewContent {
-  background-color: silver;
   padding: 20px;
+}
+
+.ratingStar {
+  font-size: 15px;
+  color: #6b6969;
 }
