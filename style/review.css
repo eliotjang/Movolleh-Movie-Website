@@ -48,6 +48,7 @@ input {
 
 /* 리뷰 작성 모달창 내부 div 설정 */
 .writeModal {
+  border: solid 1px white;
   width: 300px;
   height: 140px;
   margin: 300px auto;
@@ -59,7 +60,7 @@ input {
 }
 
 /* 리뷰 작성 모달창 X 버튼 설정 */
-.writeModal > .closeWriteModal {
+.writeModal > .closeModal {
   position: absolute;
   top: 4px;
   right: 4px;
@@ -79,6 +80,59 @@ input {
 
 /* 리뷰 작성 모달창 취소 버튼 설정 */
 .writeModal > .closeBtn {
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  left: 190px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 리뷰 삭제 모달창 외부 div 설정 */
+.reviewDeleteModal {
+  display: none;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 리뷰 삭제 모달창 내부 div 설정 */
+.deleteModal {
+  border: solid 1px white;
+  width: 300px;
+  height: 140px;
+  margin: 300px auto;
+  padding: 20px;
+  position: relative;
+  background-color: rgb(85, 84, 84);
+  border-radius: 4px;
+  line-height: 2.3;
+}
+
+/* 리뷰 삭제 모달창 X 버튼 설정 */
+.deleteModal > .deleteCloseModal {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 리뷰 삭제 모달창 확인 버튼 설정 */
+.deleteModal > .deleteCheckBtn {
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 리뷰 삭제 모달창 취소 버튼 설정 */
+.deleteModal > .deleteCloseBtn {
   width: 80px;
   position: absolute;
   bottom: 10px;

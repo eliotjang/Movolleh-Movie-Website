@@ -24,13 +24,38 @@
 
     <div class="reviewModal">
       <div class="writeModal">
-        <input type="button" value="X" class="closeWriteModal" />
+        <input type="button" value="X" class="closeModal" />
         <label>이름을 입력하세요</label><br />
         <input type="text" class="writer" placeholder="작성자" /><br />
         <label>비밀번호를 입력하세요</label><br />
         <input type="password" class="reviewPassword" placeholder="8자 이상, 특수문자 포함" /><br />
         <input type="button" value="확인" class="checkBtn" />
         <input type="button" value="취소" class="closeBtn" />
+      </div>
+      <div class="editModal">
+        <input type="button" value="X" class="closeModal" />
+        <label>리뷰를 수정하세요</label><br />
+        <input type="text" class="editText" placeholder="리뷰 내용 (최대 30자)" /><br />
+        <label>별점을 수정하세요</label><br />
+        <select class="editratingStar">
+          <option value="none">별점</option>
+          <option value="★">★</option>
+          <option value="★★">★★</option>
+          <option value="★★★">★★★</option>
+          <option value="★★★★">★★★★</option>
+          <option value="★★★★★">★★★★★</option>
+        </select>
+        <input type="button" value="확인" class="checkBtn" />
+        <input type="button" value="취소" class="closeBtn" />
+      </div>
+    </div>
+    <div class="reviewDeleteModal">
+      <div class="deleteModal">
+        <input type="button" value="X" class="deleteCloseModal" />
+        <label>비밀번호를 입력하세요</label><br />
+        <input type="password" class="deleteReviewPassword" placeholder="비밀번호 입력" /><br />
+        <input type="button" value="확인" class="deleteCheckBtn" />
+        <input type="button" value="취소" class="deleteCloseBtn" />
       </div>
     </div>
 

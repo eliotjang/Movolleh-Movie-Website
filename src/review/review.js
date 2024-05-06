@@ -11,7 +11,45 @@ const controlReview = () => {
     addLocalStorage();
   });
 
+  /*   const editBtn = document.querySelector(".editBtn");
+  editBtn.addEventListener("click", () => {
+    console.log("수정");
+  }); */
+
   printReview();
+  deleteReview();
+};
+
+const deleteReview = () => {
+  let deleteBtns = document.querySelectorAll(".deleteBtn");
+
+  deleteBtns.forEach((deleteBtn, index) => {
+    deleteBtn.addEventListener("click", () => {
+      openDeleteModal();
+
+      const deleteCheckBtn = document.querySelector(".deleteCheckBtn");
+      const reviewDeleteModal = document.querySelector(".reviewDeleteModal");
+
+      let deleteReviewPassword = "";
+      deleteCheckBtn.addEventListener("click", () => {
+        reviewDeleteModal.style.display = "none";
+        deleteReviewPassword = document.querySelector(".deleteReviewPassword").value;
+        console.log(deleteReviewPassword);
+
+        const writerRows = document.querySelectorAll(".writerRow");
+        let checkWriter = ``;
+        writerRows.forEach((e, i) => {
+          if (index === i) checkWriter = e.innerText;
+        });
+
+        console.log(checkWriter);
+        console.log(`${index}번 삭제`);
+
+        deleteLocalStorage(index, checkWriter, deleteReviewPassword);
+        location.reload(true);
+      });
+    });
+  });
 };
 
 // 초기 리뷰 작성 테이블 tr 구현
@@ -26,11 +64,11 @@ let addTable = () => {
       <td>
         <select class="ratingStar">
           <option value = "none">별점</option>
-          <option value = "☆">☆</option>
-          <option value = "☆☆">☆☆</option>
-          <option value = "☆☆☆">☆☆☆</option>
-          <option value = "☆☆☆☆">☆☆☆☆</option>
-          <option value = "☆☆☆☆☆">☆☆☆☆☆</option>
+          <option value = "★">★</option>
+          <option value = "★★">★★</option>
+          <option value = "★★★">★★★</option>
+          <option value = "★★★★">★★★★</option>
+          <option value = "★★★★★">★★★★★</option>
         </select>
       </td>
       <td><button class="writeBtn" type="button">작성</button></td>
@@ -43,7 +81,6 @@ let addTable = () => {
 // 모달창에서 입력된 작성자와, 비밀번호를 받아 localStorage에 저장 후 리로드
 let addLocalStorage = () => {
   const reviewText = document.querySelector(".reviewText").value;
-  const writer = document.querySelector(".writer").value;
   const ratingStar = document.querySelector(".ratingStar").value;
 
   const checkBtn = document.querySelector(".checkBtn");
@@ -61,6 +98,26 @@ let addLocalStorage = () => {
   });
 };
 
+let deleteLocalStorage = (index, checkWriter, deleteReviewPassword) => {
+  const reviewTable = document.querySelector(".reviewTable");
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const splitKey = key.split(" ");
+    if (splitKey[0] === similarMovieId && splitKey[1] == checkWriter) {
+      const reviewArr = JSON.parse(localStorage.getItem(key));
+      console.log(`로컬스토리지의 비밀번호는 ${reviewArr[3]}`);
+      if (reviewArr[3] === deleteReviewPassword) {
+        localStorage.removeItem(key);
+        console.log(`${key}를 로컬스토리지에서 삭제`);
+        return 0;
+      } else {
+        alert("비밀번호가 틀렸습니다.");
+      }
+    }
+  }
+};
+
 // 영화 id를 확인하여 해당 영화의 리뷰를 출력
 let printReview = () => {
   const reviewTable = document.querySelector(".reviewTable");
@@ -74,11 +131,11 @@ let printReview = () => {
       newRow.innerHTML = `
       <tr class="reviewRow">
         <td>${reviewArr[0]}</td>
-        <td>${reviewArr[1]}</td>
+        <td class="writerRow">${reviewArr[1]}</td>
         <td>${reviewArr[2]}</td>
         <td>
-          <button class="writeBtn" type="button">수정</button>
-          <button class="writeBtn" type="button">삭제</button>
+          <button class="editBtn" type="button">수정</button>
+          <button class="deleteBtn" type="button">삭제</button>
         </td>
       </tr>
     `;
@@ -90,11 +147,11 @@ let printReview = () => {
 
 // 리뷰 작성 모달창 구현
 let openWriteModal = () => {
-  const closeWriteModal = document.querySelector(".closeWriteModal");
+  const closeModal = document.querySelector(".closeModal");
   const reviewModal = document.querySelector(".reviewModal");
   const closeBtn = document.querySelector(".closeBtn");
 
-  closeWriteModal.addEventListener("click", () => {
+  closeModal.addEventListener("click", () => {
     reviewModal.style.display = "none";
   });
 
@@ -107,6 +164,27 @@ let openWriteModal = () => {
   };
 
   clickWrite();
+};
+
+// 리뷰 삭제 모달창 구현
+let openDeleteModal = () => {
+  const deleteCloseModal = document.querySelector(".deleteCloseModal");
+  const reviewDeleteModal = document.querySelector(".reviewDeleteModal");
+  const deleteCloseBtn = document.querySelector(".deleteCloseBtn");
+
+  deleteCloseModal.addEventListener("click", () => {
+    reviewDeleteModal.style.display = "none";
+  });
+
+  deleteCloseBtn.addEventListener("click", () => {
+    reviewDeleteModal.style.display = "none";
+  });
+
+  let clickDelete = () => {
+    reviewDeleteModal.style.display = "block";
+  };
+
+  clickDelete();
 };
 
 // 리뷰 작성 수행 함수 실행
