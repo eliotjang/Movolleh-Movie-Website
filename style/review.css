@@ -1,31 +1,88 @@
+/* 리뷰 볼래? 제목 위치, 크기 폰트 설정 */
 .reviewContent > h2 {
   text-align: left;
   font-size: 25px;
   margin-bottom: 25px;
 }
 
+/* 테이블 기본설정 */
 table {
   text-align: center;
   border-collapse: collapse;
   border-spacing: 0;
 }
 
+/* 테이블 셀 크기 조정  */
 td {
-  /* padding: 10px 20px; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  padding: 3px;
   text-align: left;
-  height: 20px;
 }
 
+/* 인풋 태그 폰트 설정  */
 input {
   font-size: 15px;
 }
 
+/* 감독 및 출연진 제목과 칸을 맞추기 위한 리뷰 전체 패딩 설정 */
 .reviewContent {
   padding: 20px;
 }
 
+/* 별점 폰트와 색상 설정 */
 .ratingStar {
   font-size: 15px;
   color: #6b6969;
+}
+
+/* 리뷰 작성 모달창 외부 div 설정 */
+.reviewModal {
+  display: none;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 리뷰 작성 모달창 내부 div 설정 */
+.writeModal {
+  width: 300px;
+  height: 140px;
+  margin: 300px auto;
+  padding: 20px;
+  position: relative;
+  background-color: rgb(85, 84, 84);
+  border-radius: 4px;
+  line-height: 1.8;
+}
+
+/* 리뷰 작성 모달창 X 버튼 설정 */
+.writeModal > .closeWriteModal {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 리뷰 작성 모달창 확인 버튼 설정 */
+.writeModal > .checkBtn {
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 리뷰 작성 모달창 취소 버튼 설정 */
+.writeModal > .closeBtn {
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  left: 190px;
+  font-size: 15px;
+  cursor: pointer;
 }
