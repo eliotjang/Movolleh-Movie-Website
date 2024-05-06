@@ -85,6 +85,7 @@ h2 {
 }
 
 .teamIntroducePoster {
+  margin-top: -63px;
   background-size: cover;
   background-image: url(https://blog.kakaocdn.net/dn/VDtcn/btsHctGiYzb/7PyiGZM64KdTWZhQFoKcoK/img.png);
   object-fit: cover;
