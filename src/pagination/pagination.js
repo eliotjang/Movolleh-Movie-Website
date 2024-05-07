@@ -1,10 +1,11 @@
-import { fetchData } from "../tmdb-api/api.js";
+import { fetchData, fetchPlayingData, fetchPopularData } from "../tmdb-api/api.js";
 import stateManager from "../state.js";
 
-import { renderMovieList } from "../render.js";
+import { renderMovieList, makeMovieList } from "../render.js";
 
 export const setupPaginationButtons = () => {
   const state = stateManager.getState();
+
   const firstPage = document.getElementById("firstPage");
   const prevPage = document.getElementById("prev");
   const lastPage = document.getElementById("lastPage");
@@ -23,10 +24,13 @@ export const setupPaginationButtons = () => {
 export const updatePageNumbers = () => {
   const state = stateManager.getState();
   const pageNumberContainer = document.getElementById("pageNumberContainer");
+  const pageNumberBtn = document.querySelector(".pagination");
+  pageNumberBtn.style.display = "flex";
   pageNumberContainer.innerHTML = ""; // 기존 페이지네이션 버튼 삭제
 
   // 시작 페이지 번호 계산 (현재 페이지를 중심으로, 최대 5개의 페이지 번호 표시)
   let startPage = Math.max(state.currentPage - 2, 1);
+
   let endPage = Math.min(startPage + 4, state.total_pages);
 
   generatePageButtons(startPage, endPage, pageNumberContainer);
@@ -58,13 +62,27 @@ const goToPage = async (pageNumber) => {
   const state = stateManager.getState();
   if (pageNumber >= 1 && pageNumber <= state.total_pages && pageNumber !== state.currentPage) {
     stateManager.updateState({ currentPage: pageNumber });
+    console.log(state.renderType);
+    let data = "";
+    switch (state.renderType) {
+      case "movieList":
+        data = await fetchData();
+        stateManager.updateState({ topRatedData: data.results });
 
-    const data = await fetchData();
-    if (data) {
-      stateManager.updateState({ movieData: data.results });
-      renderMovieList();
-      updatePageNumbers();
-      setupPaginationButtons();
+      case "popularList":
+        data = await fetchPlayingData();
+        stateManager.updateState({ popularData: data.results });
+
+      case "playingList":
+        data = await fetchPlayingData();
+        stateManager.updateState({ playingData: data.results });
+
+      default:
+        data = await fetchData();
+        stateManager.updateState({ movieData: data.results });
     }
+    makeMovieList();
+    updatePageNumbers();
+    setupPaginationButtons();
   }
 };
