@@ -17,7 +17,7 @@ header {
   /* padding: 15px 0; */
   position: fixed;
   width: 100vw;
-  height: 11vw;
+  height: 8vw;
   z-index: 1000;
 }
 
@@ -26,7 +26,7 @@ header {
 }
 
 h1 {
-  font-size: calc(8px + 2.4vw);
+  font-size: calc(8px + 1.4vw);
   font-weight: bold;
   text-align: left;
   margin-left: 2.4vw;
