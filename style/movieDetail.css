@@ -105,6 +105,8 @@ h2 {
   font-size: 25px;
   margin-left: 5px;
   margin-bottom: 15px;
+  color: white;
+  font-weight: bold;
 }
 
 .director {
@@ -153,16 +155,20 @@ li {
   word-break: break-all;
   line-height: 110%;
   color: beige;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
+  font-size: 15.5px;
 }
+
 .character {
   margin-top: 20px;
   max-width: 130px;
-  color: rgb(238, 238, 137);
+  color: white;
   word-break: break-all;
   line-height: 110%;
   text-align: center;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .similarMovies {
