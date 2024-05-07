@@ -1,12 +1,10 @@
 # Movolleh-Movie-Website
 
-영화 추천 사이트 입니다.
-
-## Website Link
+**순수 바닐라 자바스크립트**만을 사용하여 구현한 영화 추천 사이트 입니다. 아래 링크는 배포 링크입니다.
 
 - [Movolleh-Movie-Website]()
 
-## Layout
+## 🍓 Layout
 
 ### 랜딩 페이지
 
@@ -20,20 +18,158 @@
 - 좌측 : 검색된 영화에 대한 상세 정보 (영화 포스터, 제목, 내용 요약, 감독 및 출연진)와 리뷰를 나타냅니다.
 - 우측 : 검색된 영화를 기반으로 한 추천 영화들이 나열됩니다.
 
-## Features
+## 🥝 프로젝트 평가 항목
 
-- 바닐라 JS 사용
-- TMDB Open API 이용
-  - Now Playing API, Popular API, Top Rated API, Details API, Credits API, Similar API
-- 영화 정보 상세 페이지 구현
-- 상세 페이지 영화 리뷰 작성 기능 구현
-- UX를 고려한 validation check
-- 하기 기재된 JavaScript 문법 요소 이용하여 구현
-  - ...
-- 페이지네이션 기능 구현
-- CSS 반응형 UI 구현
+1. **필수조건**
 
-## Skills
+- [x] 바닐라 자바스크립트 사용하기
+- [x] Github Pull Request를 사용한 협업
+- [x] const와 let만을 이용한 변수 선언 필수
+- [x] TMDB OPEN API 이용
+
+2. **필수기능**
+
+- [x] 영화정보 상세 페이지 구현
+  - [x] 카드 리스트에서 카드 선택시, 상세 페이지로 이동
+  - [x] 상세 페이지에서 메인 페이지로 이동하는 UI 구현
+- [x] 상세 페이지 영화 리뷰 작성 기능 구현
+  - [x] 특정 영화에 대해 의견을 작성할 수 있는 UI 구현
+    - [x] 작성자, 리뷰, 확인비밀번호를 입력하도록 구현
+  - [x] 작성한 정보는 localStorage에 적재하도록 구현
+  - [x] UX를 고려한 validation check
+    - [x] 리뷰 수정 및 삭제 기능 구현 (선택)
+
+3. **필수문법 구현 목록**
+
+- `crewCard.js`
+
+  - 연산자
+    - 논리부정(!), 타입(typeof) 사용
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - 조건문
+    - if문
+  - 반복문
+    - 일반for문 사용
+    - for-in문 사용
+    - do-while문 사용
+    - 반복제어명령문 break문 사용
+  - 배열
+    - push
+    - filter
+  - DOM제어 : getElementById 사용
+  - module : import, export
+  - undefined를 활용한 '없는 값'에 대한 처리
+
+- `movieDetail.js`
+
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - DOM제어 : getElementById 사용
+  - module : import, export
+
+- `modal.js`
+
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - 조건문
+    - if문, if-else문
+  - DOM제어 : getElementById, addEventListener 사용
+  - module : import, export
+
+- `pagination.js`
+
+  - 연산자
+    - 논리곱(&&), 논리부정(!), 삼항연산자(?:) 사용
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - 조건문
+    - if문
+  - 반복문
+    - 일반for문 사용
+  - DOM제어 : getElementById, innerHTML 사용
+  - module : import, export
+
+- `review.js`
+
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - 조건문
+    - if문
+  - 반복문
+    - 일반for문 사용
+    - for-in문 사용
+    - do-while문 사용
+    - 반복제어명령문 break문 사용
+  - DOM제어 : querySelector, addEventListener, innerHTML, appendChild 사용
+  - module : import, export
+
+- `search.js`
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+  - 조건문
+    - if문, if-else문
+  - DOM제어 : querySelector, innerHTML 사용
+  - module : import, export
+- `api.js`
+
+  - 연산자
+    - 삼항연산자(?:) 사용
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - 조건문
+    - if문
+  - module : import, export
+
+- `main.js`
+
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - 조건문
+    - if문
+  - DOM제어 : addEventListener 사용
+  - module : import
+
+- `render.js`
+
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - 반복문
+    - forEach문
+  - DOM제어 : querySelector, innerHTML, addEventListener, window.location.href 사용
+  - module : import, export
+
+- `similarMovies.js`
+  - 화살표 함수
+    - 일반 화살표 함수 사용
+    - 매개변수가 1개인 화살표 함수 사용
+  - 조건문
+    - if문
+  - 반복문
+    - forEach문
+  - 배열
+    - slice
+  - DOM제어 : querySelector, getElementById, addEventListener, appendChild 사용
+  - module : import, export
+
+4. **선택기능**
+
+- [x] CSS
+  - [x] flex 사용하기
+  - [ ] grid 사용하기
+  - [x] 반응형 UI 구성하기
+- [x] 상세페이지 - 리뷰 수정 및 삭제 기능 구현
+- [x] 메인페이지 - 조건에 맞는 카드 리스트 정렬 기능
+
+## 🥕 Skills
 
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 
@@ -45,7 +181,7 @@
 
 <img  src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
-## Project Configuration
+## 🍋 Project Configuration
 
 <details>
   <summary>src : JavaScript 폴더입니다.</summary>
@@ -89,7 +225,7 @@
 
 [movieDetail.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/movieDetail.html) : 영화 상세 페이지 HTML 파일입니다.
 
-## Reference
+## ⛱️ Reference
 
 - [TMDB Now Playing API](https://developer.themoviedb.org/reference/movie-now-playing-list)
 - [TMDB Popular API](https://developer.themoviedb.org/reference/movie-popular-list)
@@ -98,11 +234,11 @@
 - [TMDB Credits API](https://developer.themoviedb.org/reference/movie-credits)
 - [TMDB Similar API](https://developer.themoviedb.org/reference/movie-similar)
 
-## 팀 프로젝트 설계 회의록
+## 🍇 팀 프로젝트 설계 회의록
 
 [팀 프로젝트 설계](https://eliotjang.notion.site/2a89927e3bc74e07b317adfa440ee9ea)
 
-## 팀원 소개
+## 🍒 팀원 소개
 
 <table>
   <tbody>
@@ -116,7 +252,7 @@
   </tbody>
 </table>
 
-## 역할 분담
+## 🍑 역할 분담
 
 ### 장성원
 
