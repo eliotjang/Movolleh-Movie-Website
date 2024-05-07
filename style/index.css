@@ -101,12 +101,13 @@ h2 {
 }
 .test {
   padding-top: 12.5vw;
+  margin-left: -5vw;
 }
 .introduceText {
   font-size: calc(0.1rem + 1.5vw);
   text-align: center;
   top: 35vw;
-  left: 40vw;
+  left: 30vw;
   line-height: 3.5vw;
 }
 
