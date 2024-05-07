@@ -20,10 +20,10 @@ export const searchFunc = async () => {
       if (state.movieData.length > 0) {
         renderMovieList();
 
-        updatePageNumbers(); // 페이지네이션 업데이트
+        // updatePageNumbers(); // 페이지네이션 업데이트
       } else {
         document.querySelector(".movieList").innerHTML = "<p>검색 결과가 없습니다.</p>";
-        updatePageNumbers();
+        //updatePageNumbers();
       }
     } catch (error) {
       console.error("검색 에러:", error);
@@ -43,7 +43,7 @@ export const searchFunc = async () => {
       const state = stateManager.getState();
       if (state.movieData.length > 0) {
         renderMovieList();
-        updatePageNumbers(); // 페이지네이션 업데이트
+        //updatePageNumbers(); // 페이지네이션 업데이트
       } else {
         document.querySelector(".movieList").innerHTML = "<p>검색 결과가 없습니다.</p>";
       }

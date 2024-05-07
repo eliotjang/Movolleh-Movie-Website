@@ -4,8 +4,15 @@ class StateManager {
       isSearching: false,
       currentPage: 1,
       total_pages: 0,
+      popularTotalPages: 0,
+      playingTotalPages: 0,
+      topRatedTotalPages: 0,
       currentSearchQuery: "",
-      movieData: []
+      movieData: [],
+      popularData: [],
+      playingData: [],
+      topRatedData: [],
+      renderType: ""
     };
   }
   getState() {
