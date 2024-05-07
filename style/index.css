@@ -47,7 +47,7 @@ h2 {
   padding: 20px;
   justify-content: right;
   align-items: right;
-  margin-top: 0px;
+  margin-top: 0.2vw;
 }
 
 .searchMovie > input {
@@ -67,14 +67,12 @@ h2 {
 
 .searchMovie > button {
   padding: 10px 20px;
-  background-color: #e50914;
   border: none;
-  color: #fff;
+  color: black;
   font-weight: bold;
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s;
-
   position: fixed;
   top: 50px;
   right: 30px;
@@ -82,12 +80,13 @@ h2 {
 
 .searchMovie > button:hover {
   background-color: #ff0a16;
+  color: white;
 }
 
 .teamIntroducePoster {
   margin-top: -63px;
   background-size: cover;
-  background-image: url(https://blog.kakaocdn.net/dn/VDtcn/btsHctGiYzb/7PyiGZM64KdTWZhQFoKcoK/img.png);
+  background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FD3h5y%2FbtsHbvrGOyy%2FNyKDOfhsdKwFLBLcA86680%2Fimg.png);
   object-fit: cover;
   width: 99vw;
   height: 30vw;
@@ -101,12 +100,13 @@ h2 {
 }
 .test {
   padding-top: 12.5vw;
+  margin-left: -5vw;
 }
 .introduceText {
   font-size: calc(0.1rem + 1.5vw);
   text-align: center;
   top: 35vw;
-  left: 40vw;
+  left: 30vw;
   line-height: 3.5vw;
 }
 
