@@ -16,6 +16,7 @@ const controlReview = () => {
   editReview();
 };
 
+// 수정 버튼 클릭 시 해당 리뷰 수정
 const editReview = () => {
   const editBtns = document.querySelectorAll(".editBtn");
 
@@ -51,6 +52,7 @@ const editReview = () => {
   });
 };
 
+// 삭제 버튼 클릭 시 해당 리뷰 삭제
 const deleteReview = () => {
   let deleteBtns = document.querySelectorAll(".deleteBtn");
 
@@ -116,18 +118,37 @@ let addLocalStorage = () => {
   const checkBtn = document.querySelector(".checkBtn");
   const reviewModal = document.querySelector(".reviewModal");
 
+  const spaceCheck = /\s/g;
+  const onlyNumberCheck = /[0-9]/g;
   checkBtn.addEventListener("click", () => {
     reviewModal.style.display = "none";
     let reviewPassword = document.querySelector(".reviewPassword").value;
     let writer = document.querySelector(".writer").value;
 
-    const reviewArrJson = JSON.stringify([reviewText, writer, ratingStar, reviewPassword]);
-    localStorage.setItem(`${similarMovieId} ${writer}`, reviewArrJson);
+    const writerRows = document.querySelectorAll(".writerRow");
+    let hasSameWriter = false;
+    writerRows.forEach((e) => {
+      if (writer === e.innerText) {
+        hasSameWriter = true;
+      }
+    });
+
+    if (writer.match(spaceCheck)) {
+      alert("공백 없이 작성자의 이름을 작성하세요!");
+    } else if (hasSameWriter) {
+      alert("동일한 이름의 작성자가 있습니다!");
+    } else if (writer.match(onlyNumberCheck)) {
+      alert("작성자의 이름이 숫자로만 구성될 수 없습니다!");
+    } else {
+      const reviewArrJson = JSON.stringify([reviewText, writer, ratingStar, reviewPassword]);
+      localStorage.setItem(`${similarMovieId} ${writer}`, reviewArrJson);
+    }
 
     location.reload(true);
   });
 };
 
+// 리뷰 삭제 모달창에서 입력된 비밀번호를 받아 상세 페이지 영화 id와 작성자의 이름을 확인해 localStorage에서 삭제 후 리로드
 let deleteLocalStorage = (index, checkWriter, deleteReviewPassword) => {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
@@ -146,6 +167,7 @@ let deleteLocalStorage = (index, checkWriter, deleteReviewPassword) => {
   }
 };
 
+// 리뷰 수정 모달창에서 입력된 수정된 리뷰 내용, 별점, 비밀번호를 받아 상세 페이지 영화 id와 작성자의 이름을 확인해 해당 키의 localStorage 수정 후 리로드
 let editLocalStorage = (index, editText, checkWriter, editRatingStar, editReviewPassword) => {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
@@ -233,6 +255,7 @@ let openDeleteModal = () => {
   clickDelete();
 };
 
+// 리뷰 수정 모달창 구현
 let openEditModal = () => {
   const editCloseModal = document.querySelector(".editCloseModal");
   const reviewEditModal = document.querySelector(".reviewEditModal");
