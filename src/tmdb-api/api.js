@@ -81,3 +81,36 @@ export const fetchDetailData = async () => {
     throw error;
   }
 };
+
+export const fetchPopularData = async () => {
+  try {
+    const state = stateManager.getState();
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${state.currentPage}`,
+      options
+    );
+    if (!res.ok) {
+      throw new Error("에러발생!!");
+    }
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+};
+export const fetchPlayingData = async () => {
+  try {
+    const state = stateManager.getState();
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${state.currentPage}`,
+      options
+    );
+    if (!res.ok) {
+      throw new Error("에러발생!!");
+    }
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+};
