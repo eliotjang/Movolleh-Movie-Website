@@ -20,14 +20,14 @@
 
 ## 🥝 프로젝트 평가 항목
 
-1. **필수조건**
+### 1. **필수 조건**
 
 - [x] 바닐라 자바스크립트 사용하기
 - [x] Github Pull Request를 사용한 협업
 - [x] const와 let만을 이용한 변수 선언 필수
 - [x] TMDB OPEN API 이용
 
-2. **필수기능**
+### 2. **필수 기능**
 
 - [x] 영화정보 상세 페이지 구현
   - [x] 카드 리스트에서 카드 선택시, 상세 페이지로 이동
@@ -39,132 +39,273 @@
   - [x] UX를 고려한 validation check
     - [x] 리뷰 수정 및 삭제 기능 구현 (선택)
 
-3. **필수문법 구현 목록**
+### 3. **필수 문법 구현 목록**
 
-- `crewCard.js`
+<details markdown="1">
+  <summary>crewCard.js</summary>
+  <div>
+    <ul>
+      <li>연산자</li>
+        <ul>
+          <li>논리부정(!), 타입(typeof) 사용</li>
+        </ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>조건문</li>
+        <ul>
+          <li>if문</li>
+        </ul>
+      <li>반복문</li>
+        <ul>
+          <li>일반 for문 사용</li>
+        </ul>
+        <ul>
+          <li>for...in문 사용</li>
+        </ul>
+        <ul>
+          <li>do...while문 사용</li>
+        </ul>
+        <ul>
+          <li>반복 제어 명령문 break문 사용</li>
+        </ul>
+      <li>배열</li>
+        <ul>
+          <li>push</li>
+        </ul>
+        <ul>
+          <li>filter</li>
+        </ul>
+      <li>DOM 제어 : getElementById 사용</li>
+      <li>module : import, export</li>
+      <li>undefined를 활용한 '없는 값'에 대한 처리</li>
+    </ul>
+  </div>
+</details>
 
-  - 연산자
-    - 논리부정(!), 타입(typeof) 사용
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - 조건문
-    - if문
-  - 반복문
-    - 일반for문 사용
-    - for-in문 사용
-    - do-while문 사용
-    - 반복제어명령문 break문 사용
-  - 배열
-    - push
-    - filter
-  - DOM제어 : getElementById 사용
-  - module : import, export
-  - undefined를 활용한 '없는 값'에 대한 처리
+<details markdown="1">
+  <summary>movieDetail.js</summary>
+  <div>
+    <ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>DOM 제어 : getElementById 사용</li>
+      <li>module : import, export</li>
+    </ul>
+  </div>
+</details>
 
-- `movieDetail.js`
+<details markdown="1">
+  <summary>modal.js</summary>
+  <div>
+    <ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>조건문</li>
+        <ul>
+          <li>if문, if-else문</li>
+        </ul>
+      <li>DOM 제어 : getElementById, addEventListener 사용</li>
+      <li>module : import, export</li>
+    </ul>
+  </div>
+</details>
 
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - DOM제어 : getElementById 사용
-  - module : import, export
+<details markdown="1">
+  <summary>pagination.js</summary>
+  <div>
+    <ul>
+      <li>연산자</li>
+        <ul>
+          <li>논리곱(&&), 논리부정(!), 삼항연산자(?:) 사용</li>
+        </ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>조건문</li>
+        <ul>
+          <li>if문</li>
+        </ul>
+      <li>반복문</li>
+        <ul>
+          <li>일반 for문 사용</li>
+        </ul>
+      <li>DOM 제어 : getElementById, innerHTML 사용</li>
+      <li>module : import, export</li>
+    </ul>
+  </div>
+</details>
 
-- `modal.js`
+<details markdown="1">
+  <summary>review.js</summary>
+  <div>
+    <ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>조건문</li>
+        <ul>
+          <li>if문</li>
+        </ul>
+      <li>반복문</li>
+        <ul>
+          <li>일반 for문 사용</li>
+        </ul>
+        <ul>
+          <li>for...in문 사용</li>
+        </ul>
+        <ul>
+          <li>do...while문 사용</li>
+        </ul>
+        <ul>
+          <li>반복 제어 명령문 break문 사용</li>
+        </ul>
+      <li>DOM 제어 : querySelector, addEventListener, innerHTML, appendChild 사용</li>
+      <li>module : import, export</li>
+    </ul>
+  </div>
+</details>
 
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - 조건문
-    - if문, if-else문
-  - DOM제어 : getElementById, addEventListener 사용
-  - module : import, export
+<details markdown="1">
+  <summary>search.js</summary>
+  <div>
+    <ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+      <li>조건문</li>
+        <ul>
+          <li>if문, if-else문</li>
+        </ul>
+      <li>DOM 제어 : querySelector, innerHTML 사용</li>
+      <li>module : import, export</li>
+    </ul>
+  </div>
+</details>
 
-- `pagination.js`
+<details markdown="1">
+  <summary>api.js</summary>
+  <div>
+    <ul>
+      <li>연산자</li>
+        <ul>
+          <li>삼항연산자(?:) 사용</li>
+        </ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>조건문</li>
+        <ul>
+          <li>if문</li>
+        </ul>
+      <li>module : import, export</li>
+    </ul>
+  </div>
+</details>
 
-  - 연산자
-    - 논리곱(&&), 논리부정(!), 삼항연산자(?:) 사용
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - 조건문
-    - if문
-  - 반복문
-    - 일반for문 사용
-  - DOM제어 : getElementById, innerHTML 사용
-  - module : import, export
+<details markdown="1">
+  <summary>main.js</summary>
+  <div>
+    <ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>조건문</li>
+        <ul>
+          <li>if문</li>
+        </ul>
+      <li>DOM 제어 : addEventListener 사용</li>
+      <li>module : import</li>
+    </ul>
+  </div>
+</details>
 
-- `review.js`
+<details markdown="1">
+  <summary>render.js</summary>
+  <div>
+    <ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>반복문</li>
+        <ul>
+          <li>forEach문</li>
+        </ul>
+      <li>DOM 제어 : querySelector, innerHTML, addEventListener, window.location.href 사용</li>
+      <li>module : import, export</li>
+    </ul>
+  </div>
+</details>
 
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - 조건문
-    - if문
-  - 반복문
-    - 일반for문 사용
-    - for-in문 사용
-    - do-while문 사용
-    - 반복제어명령문 break문 사용
-  - DOM제어 : querySelector, addEventListener, innerHTML, appendChild 사용
-  - module : import, export
+<details markdown="1">
+  <summary>similarMovies.js</summary>
+  <div>
+    <ul>
+      <li>화살표 함수</li>
+        <ul>
+          <li>일반 화살표 함수 사용</li>
+        </ul>
+        <ul>
+          <li>매개변수가 1개인 화살표 함수 사용</li>
+        </ul>
+      <li>조건문</li>
+        <ul>
+          <li>if문</li>
+        </ul>
+      <li>반복문</li>
+        <ul>
+          <li>forEach문</li>
+        </ul>
+      <li>배열</li>
+        <ul>
+          <li>slice</li>
+        </ul>
+      <li>DOM 제어 : querySelector, getElementById, addEventListener, appendChild 사용</li>
+      <li>module : import, export</li>
+    </ul>
+  </div>
+</details>
 
-- `search.js`
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-  - 조건문
-    - if문, if-else문
-  - DOM제어 : querySelector, innerHTML 사용
-  - module : import, export
-- `api.js`
-
-  - 연산자
-    - 삼항연산자(?:) 사용
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - 조건문
-    - if문
-  - module : import, export
-
-- `main.js`
-
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - 조건문
-    - if문
-  - DOM제어 : addEventListener 사용
-  - module : import
-
-- `render.js`
-
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - 반복문
-    - forEach문
-  - DOM제어 : querySelector, innerHTML, addEventListener, window.location.href 사용
-  - module : import, export
-
-- `similarMovies.js`
-  - 화살표 함수
-    - 일반 화살표 함수 사용
-    - 매개변수가 1개인 화살표 함수 사용
-  - 조건문
-    - if문
-  - 반복문
-    - forEach문
-  - 배열
-    - slice
-  - DOM제어 : querySelector, getElementById, addEventListener, appendChild 사용
-  - module : import, export
-
-4. **선택기능**
+### 4. **선택 기능**
 
 - [x] CSS
   - [x] flex 사용하기
-  - [ ] grid 사용하기
+  - [x] grid 사용하기
   - [x] 반응형 UI 구성하기
 - [x] 상세페이지 - 리뷰 수정 및 삭제 기능 구현
 - [x] 메인페이지 - 조건에 맞는 카드 리스트 정렬 기능
@@ -188,20 +329,18 @@
   <div markdown="1">
     <ul>
       <li>crewDetail : 상세 페이지 좌측의 영화에 대한 상세 정보를 나타냅니다.</li>
-      <li>modal.js</li>
+      <li>modal.js : 상세 페이지 좌측 하단의 리뷰 작성 기능에 구현된 모달 창 기능입니다.</li>
       <li>pagination.js : 랜딩 페이지 하단의 페이지 버튼을 이용하여 원하는 페이지로 이동할 수 있는 기능이 구현되어 있습니다.</li>
       <li>review.js : 상세 페이지 좌측 하단의 리뷰 작성 기능이 구현되어 있습니다.</li>
-      <li>search.js</li>
+      <li>search.js : 랜딩 페이지 우측 상단의 검색 기능이 구현되어 있습니다.</li>
       <li>tmdb-api : TMDB API 요청을 처리합니다.</li>
-      <li>main.js</li>
-      <li>render.js</li>
+      <li>main.js : 메인 JS 파일입니다.</li>
+      <li>render.js : 랜딩 페이지에서 영화들을 새롭게 렌더링 하기 이전에 페이지를 초기화 하는 기능이 구현되어 있습니다.</li>
       <li>similarMovies.js : 상세 페이지 우측의 검색된 영화를 기반으로 한 추천 영화 목록을 나타냅니다.</li>
-      <li>state.js</li>
+      <li>state.js : </li>
     </ul>
   </div>
 </details>
-
-<br>
 
 <details>
   <summary>style : CSS 폴더입니다.</summary>
@@ -210,14 +349,11 @@
       <li>credit.css : 팀 소개 페이지 CSS 스타일 시트입니다.</li>
       <li>index.css : 랜딩 페이지 CSS 스타일 시트입니다.</li>
       <li>movieDetail.css : crewDetail의 CSS 스타일 시트입니다.</li>
-      <li>reset.css</li>
       <li>review.css : review.js의 CSS 스타일 시트입니다.</li>
       <li>similarMoviesStyle.css : similarMovies.js의 CSS 스타일 시트입니다.</li>
     </ul>
   </div>
 </details>
-
-<br>
 
 [credit.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/credit.html) : 웹 페이지를 제작한 팀 소개 페이지 HTML 파일입니다.
 
