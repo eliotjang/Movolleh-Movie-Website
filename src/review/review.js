@@ -119,7 +119,8 @@ let addLocalStorage = () => {
   const reviewModal = document.querySelector(".reviewModal");
 
   const spaceCheck = /\s/g;
-  const onlyNumberCheck = /[0-9]/g;
+  const onlyNumberCheck = /^[0-9]*$/;
+  const passwordCheck = /^(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
   checkBtn.addEventListener("click", () => {
     reviewModal.style.display = "none";
     let reviewPassword = document.querySelector(".reviewPassword").value;
@@ -139,6 +140,8 @@ let addLocalStorage = () => {
       alert("동일한 이름의 작성자가 있습니다!");
     } else if (writer.match(onlyNumberCheck)) {
       alert("작성자의 이름이 숫자로만 구성될 수 없습니다!");
+    } else if (!passwordCheck.test(reviewPassword)) {
+      alert("최소 8자리 이상 숫자 및 특수문자가 포함된 비밀번호를 입력하세요!");
     } else {
       const reviewArrJson = JSON.stringify([reviewText, writer, ratingStar, reviewPassword]);
       localStorage.setItem(`${similarMovieId} ${writer}`, reviewArrJson);
