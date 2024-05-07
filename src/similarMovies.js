@@ -37,9 +37,9 @@ const printSimilarMovies = () => {
 const initializeData = async () => {
   const response = await fetchSimilarMoviesData(similarMovieId);
   data = sortAndFilterMovies(response.results);
-  console.log(data); // 데이터 확인용
-  console.log(`상세 페이지 영화의 id => ${similarMovieId}`);
-  console.log(`첫 번째 추천 영화의 제목 => ${data[0].title}`);
+  //console.log(data); // 데이터 확인용
+  //console.log(`상세 페이지 영화의 id => ${similarMovieId}`);
+  //console.log(`첫 번째 추천 영화의 제목 => ${data[0].title}`);
   printSimilarMovies();
 };
 
