@@ -10,12 +10,30 @@ export const introduceCard = async () => {
       return v; // 제작진(crew) 중에서 감독을 찾아서 할당
     }
   });
-  for (let i = 0; i < 5; i++) {
-    if (director.length > i) {
-      introduceDirector(director[i]); // 1번함수 실행
+
+  // 감독 출력
+  let directornum = 0;
+  let directorlist = [];
+  for (let i = 0; i < director.length; i++) {
+    for (let directorbreak in director) {
+      if (typeof directorbreak.job == "undefined") {
+        break;
+      }
+      if (directorbreak.job !== "director") {
+        break;
+      }
     }
-    introduceCast(cast[i]); // 2번함수 실행
+    introduceDirector(director[i]);
+    directorlist.push(director[i].name);
   }
+  directornum = directorlist.length; // 감독 수에 따라 배우 수를 출력해야하므로 감독 수를 기억해둔다
+
+  // 배우 출력
+  let castnum = 0;
+  do {
+    introduceCast(cast[castnum]);
+    castnum = castnum + 1;
+  } while (castnum < 6 - directornum); // 감독 수에 따라 출력될 배우 수를 조정해준다
 };
 
 //
