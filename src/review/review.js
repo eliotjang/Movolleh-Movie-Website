@@ -42,10 +42,14 @@ const editReview = () => {
           if (index === i) checkWriter = e.innerText;
         });
 
-        console.log(checkWriter);
-        console.log(`${index}번 삭제`);
-
-        editLocalStorage(index, editText, checkWriter, editRatingStar, editReviewPassword);
+        if (editText === "") {
+          alert("공백으로 수정할 수 없습니다!");
+        } else if (editRatingStar === "none") {
+          alert("별점을 선택하세요!");
+        } else {
+          editLocalStorage(editText, checkWriter, editRatingStar, editReviewPassword);
+        }
+        location.reload(true);
       });
     });
   });
@@ -73,10 +77,7 @@ const deleteReview = () => {
           if (index === i) checkWriter = e.innerText;
         });
 
-        console.log(checkWriter);
-        console.log(`${index}번 삭제`);
-
-        deleteLocalStorage(index, checkWriter, deleteReviewPassword);
+        deleteLocalStorage(checkWriter, deleteReviewPassword);
         location.reload(true);
       });
     });
@@ -133,7 +134,11 @@ let addLocalStorage = () => {
       }
     });
 
-    if (writer.match(spaceCheck)) {
+    if (reviewText === "") {
+      alert("리뷰 내용을 작성하세요!");
+    } else if (ratingStar === "none") {
+      alert("별점을 선택하세요!");
+    } else if (writer.match(spaceCheck)) {
       alert("공백 없이 작성자의 이름을 작성하세요!");
     } else if (hasSameWriter) {
       alert("동일한 이름의 작성자가 있습니다!");
@@ -151,16 +156,14 @@ let addLocalStorage = () => {
 };
 
 // 리뷰 삭제 모달창에서 입력된 비밀번호를 받아 상세 페이지 영화 id와 작성자의 이름을 확인해 localStorage에서 삭제 후 리로드
-let deleteLocalStorage = (index, checkWriter, deleteReviewPassword) => {
+let deleteLocalStorage = (checkWriter, deleteReviewPassword) => {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const splitKey = key.split(" ");
     if (splitKey[0] === similarMovieId && splitKey[1] == checkWriter) {
       const reviewArr = JSON.parse(localStorage.getItem(key));
-      console.log(`로컬스토리지의 비밀번호는 ${reviewArr[3]}`);
       if (reviewArr[3] === deleteReviewPassword) {
         localStorage.removeItem(key);
-        console.log(`${key}를 로컬스토리지에서 삭제`);
         return 0;
       } else {
         alert("비밀번호가 틀렸습니다.");
@@ -170,13 +173,12 @@ let deleteLocalStorage = (index, checkWriter, deleteReviewPassword) => {
 };
 
 // 리뷰 수정 모달창에서 입력된 수정된 리뷰 내용, 별점, 비밀번호를 받아 상세 페이지 영화 id와 작성자의 이름을 확인해 해당 키의 localStorage 수정 후 리로드
-let editLocalStorage = (index, editText, checkWriter, editRatingStar, editReviewPassword) => {
+let editLocalStorage = (editText, checkWriter, editRatingStar, editReviewPassword) => {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const splitKey = key.split(" ");
     if (splitKey[0] === similarMovieId && splitKey[1] == checkWriter) {
       const reviewArr = JSON.parse(localStorage.getItem(key));
-      console.log(`로컬스토리지의 비밀번호는 ${reviewArr[3]}`);
       if (reviewArr[3] === editReviewPassword) {
         let editReviewArrJson = JSON.stringify([editText, reviewArr[1], editRatingStar, reviewArr[3]]);
         localStorage.setItem(key, editReviewArrJson);
@@ -186,7 +188,6 @@ let editLocalStorage = (index, editText, checkWriter, editRatingStar, editReview
       }
     }
   }
-  location.reload(true);
 };
 
 // 영화 id를 확인하여 해당 영화의 리뷰를 출력
@@ -210,8 +211,6 @@ let printReview = () => {
         </td>
       </tr>
     `;
-      // 비밀번호 확인용 콘솔
-      // console.log(reviewArr[3]);
     }
   }
 };
