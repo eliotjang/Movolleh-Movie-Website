@@ -11,13 +11,44 @@ const controlReview = () => {
     addLocalStorage();
   });
 
-  /*   const editBtn = document.querySelector(".editBtn");
-  editBtn.addEventListener("click", () => {
-    console.log("수정");
-  }); */
-
   printReview();
   deleteReview();
+  editReview();
+};
+
+const editReview = () => {
+  const editBtns = document.querySelectorAll(".editBtn");
+
+  editBtns.forEach((editBtn, index) => {
+    editBtn.addEventListener("click", () => {
+      openEditModal();
+
+      const editCheckBtn = document.querySelector(".editCheckBtn");
+      const reviewEditModal = document.querySelector(".reviewEditModal");
+
+      let editText = "";
+      let editRatingStar = "";
+      let editReviewPassword = "";
+      editCheckBtn.addEventListener("click", () => {
+        reviewEditModal.style.display = "none";
+        editText = document.querySelector(".editText").value;
+        editRatingStar = document.querySelector(".editRatingStar").value;
+        editReviewPassword = document.querySelector(".editReviewPassword").value;
+
+        const writerRows = document.querySelectorAll(".writerRow");
+        let checkWriter = ``;
+        writerRows.forEach((e, i) => {
+          if (index === i) checkWriter = e.innerText;
+        });
+
+        console.log(checkWriter);
+        console.log(`${index}번 삭제`);
+
+        editLocalStorage(index, editText, checkWriter, editRatingStar, editReviewPassword);
+        location.reload(true);
+      });
+    });
+  });
 };
 
 const deleteReview = () => {
@@ -34,7 +65,6 @@ const deleteReview = () => {
       deleteCheckBtn.addEventListener("click", () => {
         reviewDeleteModal.style.display = "none";
         deleteReviewPassword = document.querySelector(".deleteReviewPassword").value;
-        console.log(deleteReviewPassword);
 
         const writerRows = document.querySelectorAll(".writerRow");
         let checkWriter = ``;
@@ -60,7 +90,7 @@ let addTable = () => {
   reviewTable.innerHTML = `
   <table class="reviewTable">
     <tr>
-      <td><input class="reviewText" type="text" placeholder="리뷰 내용 (최대 30자)" size=60 maxlength=30 /></td>
+      <td><input class="reviewText" type="text" placeholder="리뷰 내용 (최대 30자)" size="60" maxlength="30" /></td>
       <td>
         <select class="ratingStar">
           <option value = "none">별점</option>
@@ -99,8 +129,6 @@ let addLocalStorage = () => {
 };
 
 let deleteLocalStorage = (index, checkWriter, deleteReviewPassword) => {
-  const reviewTable = document.querySelector(".reviewTable");
-
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const splitKey = key.split(" ");
@@ -110,6 +138,24 @@ let deleteLocalStorage = (index, checkWriter, deleteReviewPassword) => {
       if (reviewArr[3] === deleteReviewPassword) {
         localStorage.removeItem(key);
         console.log(`${key}를 로컬스토리지에서 삭제`);
+        return 0;
+      } else {
+        alert("비밀번호가 틀렸습니다.");
+      }
+    }
+  }
+};
+
+let editLocalStorage = (index, editText, checkWriter, editRatingStar, editReviewPassword) => {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const splitKey = key.split(" ");
+    if (splitKey[0] === similarMovieId && splitKey[1] == checkWriter) {
+      const reviewArr = JSON.parse(localStorage.getItem(key));
+      console.log(`로컬스토리지의 비밀번호는 ${reviewArr[3]}`);
+      if (reviewArr[3] === editReviewPassword) {
+        let editReviewArrJson = JSON.stringify([editText, reviewArr[1], editRatingStar, reviewArr[3]]);
+        localStorage.setItem(key, editReviewArrJson);
         return 0;
       } else {
         alert("비밀번호가 틀렸습니다.");
@@ -185,6 +231,26 @@ let openDeleteModal = () => {
   };
 
   clickDelete();
+};
+
+let openEditModal = () => {
+  const editCloseModal = document.querySelector(".editCloseModal");
+  const reviewEditModal = document.querySelector(".reviewEditModal");
+  const editCloseBtn = document.querySelector(".editCloseBtn");
+
+  editCloseModal.addEventListener("click", () => {
+    reviewEditModal.style.display = "none";
+  });
+
+  editCloseBtn.addEventListener("click", () => {
+    reviewEditModal.style.display = "none";
+  });
+
+  let clickEdit = () => {
+    reviewEditModal.style.display = "block";
+  };
+
+  clickEdit();
 };
 
 // 리뷰 작성 수행 함수 실행

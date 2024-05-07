@@ -32,12 +32,15 @@
         <input type="button" value="확인" class="checkBtn" />
         <input type="button" value="취소" class="closeBtn" />
       </div>
+    </div>
+    <div class="reviewEditModal">
       <div class="editModal">
-        <input type="button" value="X" class="closeModal" />
+        <input type="button" value="X" class="editCloseModal" />
         <label>리뷰를 수정하세요</label><br />
-        <input type="text" class="editText" placeholder="리뷰 내용 (최대 30자)" /><br />
+        <textarea type="text" class="editText" placeholder="리뷰 내용 (최대 30자)" size="30" maxlength="30"></textarea
+        ><br />
         <label>별점을 수정하세요</label><br />
-        <select class="editratingStar">
+        <select class="editRatingStar">
           <option value="none">별점</option>
           <option value="★">★</option>
           <option value="★★">★★</option>
@@ -45,8 +48,10 @@
           <option value="★★★★">★★★★</option>
           <option value="★★★★★">★★★★★</option>
         </select>
-        <input type="button" value="확인" class="checkBtn" />
-        <input type="button" value="취소" class="closeBtn" />
+        <label><br />비밀번호를 입력하세요</label><br />
+        <input type="password" class="editReviewPassword" placeholder="비밀번호 입력" /><br />
+        <input type="button" value="확인" class="editCheckBtn" />
+        <input type="button" value="취소" class="editCloseBtn" />
       </div>
     </div>
     <div class="reviewDeleteModal">
