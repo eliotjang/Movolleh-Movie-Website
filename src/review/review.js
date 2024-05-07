@@ -46,7 +46,6 @@ const editReview = () => {
         console.log(`${index}번 삭제`);
 
         editLocalStorage(index, editText, checkWriter, editRatingStar, editReviewPassword);
-        location.reload(true);
       });
     });
   });
@@ -187,6 +186,7 @@ let editLocalStorage = (index, editText, checkWriter, editRatingStar, editReview
       }
     }
   }
+  location.reload(true);
 };
 
 // 영화 id를 확인하여 해당 영화의 리뷰를 출력
