@@ -6,7 +6,6 @@ import { renderMovieList, makeMovieList } from "../render.js";
 export const setupPaginationButtons = () => {
   const state = stateManager.getState();
 
-  console.log(state.total_pages);
   const firstPage = document.getElementById("firstPage");
   const prevPage = document.getElementById("prev");
   const lastPage = document.getElementById("lastPage");
@@ -79,6 +78,8 @@ const goToPage = async (pageNumber) => {
         stateManager.updateState({ playingData: data.results });
 
       default:
+        data = await fetchData();
+        stateManager.updateState({ movieData: data.results });
     }
     makeMovieList();
     updatePageNumbers();

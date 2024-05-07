@@ -15,10 +15,31 @@ export const renderMovieList = () => {
   makeTopRateMovieList($topRateMovieList);
 };
 
+// export const makeSearchList = () => {
+//   let state = stateManager.getState();
+//   $movieList.innerHTML = "";
+//   $popularMovieList.innerHTML = "";
+//   $playingMovieList.innerHTML = "";
+//   $topRateMovieList.innerHTML = "";
+//   console.log(state.movieData);
+//   state.movieData.forEach((movie) => {
+//     const $movie = document.createElement("div");
+//     $movie.className = "movie";
+//     $movie.innerHTML = `
+//         <img class='poster' src="https://image.tmdb.org/t/p/w500${movie.poster_path}" />
+//         <h2 class='movieTitle'>${movie.title}</h2>
+//       `;
+//     $movie.id = movie.id;
+//     $movieList.appendChild($movie);
+//     $movie.addEventListener("click", () => {
+//       window.location.href = `movieDetail.html?id=${movie.id}`;
+//     });
+//   });
+//   updatePageNumbers();
+// };
 // 각 영화에 대한 HTML 요소를 생성
 export const makeMovieList = () => {
   let state = stateManager.getState();
-  console.log(state.renderType === "movieList");
   switch (state.renderType) {
     case "movieList":
       stateManager.updateState({ movieData: state.topRatedData });
@@ -41,7 +62,9 @@ export const makeMovieList = () => {
   console.log(state);
 
   $movieList.innerHTML = "";
-  console.log(state.movieData);
+  $popularMovieList.innerHTML = "";
+  $playingMovieList.innerHTML = "";
+  $topRateMovieList.innerHTML = "";
   state.movieData.forEach((movie) => {
     const $movie = document.createElement("div");
     $movie.className = "movie";

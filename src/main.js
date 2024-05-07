@@ -17,26 +17,17 @@ const loadPageSectionData = async () => {
   const playingData = await fetchPlayingData();
   const topRatedData = await fetchData();
   if (popularData && playingData && topRatedData) {
-    console.log(playingData);
     stateManager.updateState({ playingData: playingData.results, playingTotalPages: playingData.total_pages });
     stateManager.updateState({ popularData: popularData.results, popularTotalPages: popularData.total_pages });
     stateManager.updateState({ topRatedData: topRatedData.results, topRatedTotalPages: topRatedData.total_pages });
     renderMovieList();
   }
 };
-const loadPageData = async () => {
-  const data = await fetchData();
-  if (data) {
-    stateManager.updateState({ total_pages: data.total_pages });
-    stateManager.updateState({ movieData: data.results });
-    renderMovieList();
-    //updatePageNumbers();
-  }
-};
 
 const $searchMovie = document.querySelector(".searchMovie");
 $searchMovie.addEventListener("submit", async (e) => {
   e.preventDefault();
+  console.log(1);
   const searchedString = e.target["search"].value.toUpperCase();
   stateManager.updateState({ currentSearchQuery: searchedString });
   searchFunc();
