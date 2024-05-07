@@ -46,8 +46,6 @@ const editReview = () => {
 
         console.log(checkWriter);
         console.log(`${index}번 삭제`);
-
-        editLocalStorage(index, editText, checkWriter, editRatingStar, editReviewPassword);
       });
     });
   });
