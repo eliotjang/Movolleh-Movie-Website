@@ -19,7 +19,8 @@ td {
   text-align: left;
 }
 
-/* 인풋 태그 폰트 설정  */
+/* input, textarea 태그 폰트 설정  */
+textarea,
 input {
   font-size: 15px;
 }
@@ -30,6 +31,7 @@ input {
 }
 
 /* 별점 폰트와 색상 설정 */
+.editRatingStar,
 .ratingStar {
   font-size: 15px;
   color: #6b6969;
@@ -51,7 +53,7 @@ input {
   border: solid 1px white;
   width: 300px;
   height: 140px;
-  margin: 300px auto;
+  margin: 200px auto;
   padding: 20px;
   position: relative;
   background-color: rgb(85, 84, 84);
@@ -104,7 +106,7 @@ input {
   border: solid 1px white;
   width: 300px;
   height: 140px;
-  margin: 300px auto;
+  margin: 200px auto;
   padding: 20px;
   position: relative;
   background-color: rgb(85, 84, 84);
@@ -139,4 +141,63 @@ input {
   left: 190px;
   font-size: 15px;
   cursor: pointer;
+}
+
+/* 리뷰 수정 모달창 외부 div 설정 */
+.reviewEditModal {
+  display: none;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 리뷰 수정 모달창 내부 div 설정 */
+.editModal {
+  border: solid 1px white;
+  width: 300px;
+  height: 280px;
+  margin: 200px auto;
+  padding: 20px;
+  position: relative;
+  background-color: rgb(85, 84, 84);
+  border-radius: 4px;
+  line-height: 2.3;
+}
+
+/* 리뷰 수정 모달창 X 버튼 설정 */
+.editModal > .editCloseModal {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 리뷰 수정 모달창 확인 버튼 설정 */
+.editModal > .editCheckBtn {
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 리뷰 수정 모달창 취소 버튼 설정 */
+.editModal > .editCloseBtn {
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  left: 190px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.editText {
+  resize: none;
+  width: 300px;
+  height: 40px;
 }
