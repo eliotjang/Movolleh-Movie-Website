@@ -34,9 +34,6 @@ const editReview = () => {
         editText = document.querySelector(".editText").value;
         editRatingStar = document.querySelector(".editRatingStar").value;
         editReviewPassword = document.querySelector(".editReviewPassword").value;
-        console.log(editText);
-        console.log(editRatingStar);
-        console.log(editReviewPassword);
 
         const writerRows = document.querySelectorAll(".writerRow");
         let checkWriter = ``;
@@ -46,6 +43,9 @@ const editReview = () => {
 
         console.log(checkWriter);
         console.log(`${index}번 삭제`);
+
+        editLocalStorage(index, editText, checkWriter, editRatingStar, editReviewPassword);
+        location.reload(true);
       });
     });
   });
@@ -152,6 +152,14 @@ let editLocalStorage = (index, editText, checkWriter, editRatingStar, editReview
     const splitKey = key.split(" ");
     if (splitKey[0] === similarMovieId && splitKey[1] == checkWriter) {
       const reviewArr = JSON.parse(localStorage.getItem(key));
+      console.log(`로컬스토리지의 비밀번호는 ${reviewArr[3]}`);
+      if (reviewArr[3] === editReviewPassword) {
+        let editReviewArrJson = JSON.stringify([editText, reviewArr[1], editRatingStar, reviewArr[3]]);
+        localStorage.setItem(key, editReviewArrJson);
+        return 0;
+      } else {
+        alert("비밀번호가 틀렸습니다.");
+      }
     }
   }
 };
