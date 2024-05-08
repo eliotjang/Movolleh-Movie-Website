@@ -15,7 +15,7 @@
 
 ### Wireframe
 
-![alt text](image-9.png)
+![alt text](assets/image-9.png)
 
 - 웹 기반 UI/UX 협업 툴, Figma 사용
 - [Figma 협업 링크](https://www.figma.com/file/s9buq5bmNj29GUb6YuMWEZ/Untitled?type=design&node-id=17-39&mode=design&t=ztDeOEphbsYTa3nz-0)
@@ -41,14 +41,14 @@
 ### Github Collaboration Rules
 
 <!-- ![팀 프로젝트 협업 규칙](image.png){: width="100" height="100"} -->
-<img src="image.png" width="480" height="280">
+<img src="assets/image.png" width="480" height="280">
 
 ### Github branch 생성 및 Pull Request 규칙
 
 1️⃣ `remote dev branch`에서 `local dev branch`로 `pull`  
 2️⃣ Github issue 생성 이후 `[issue별 자동 생성 브랜치명] branch` 생성
 
-![alt text](image-1.png)
+![alt text](assets/image-1.png)
 
 3️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 기능 구현 완료 후 `remote [issue별 자동 생성 브랜치명] branch`로 add, commit, push  
 4️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 `remote dev branch`로 pull  
@@ -62,13 +62,13 @@
 ### 🚀 Landing Page
 
 `랜딩페이지 상단`  
-<img src="image-2.png" width="700" height="400">
+<img src="assets/image-2.png" width="700" height="400">
 
 `랜딩페이지 중단`  
-<img src="image-7.png" width="500" height="400">
+<img src="assets/image-7.png" width="500" height="400">
 
 `랜딩페이지 하단`  
-<img src="image-8.png" width="500" height="400">
+<img src="assets/image-8.png" width="500" height="400">
 
 - `MOVOLLEH` 버튼 : 홈페이지 새로고침
 - `Credit` 버튼 : 팀 프로젝트 및 팀원 소개 페이지 이동
@@ -82,7 +82,7 @@
 ### 😎 Credit Page
 
 `팀 프로젝트 및 팀원 소개 페이지`  
-![alt text](image-6.png)
+![alt text](assets/image-6.png)
 
 - `View out GitHub Repository` : 웹페이지 배포 레포지토리 접근
 - `Check out the Live Project` : 웹페이지 배포 링크 접근
@@ -91,10 +91,10 @@
 ### 🧾 Description Page
 
 `상세 페이지 상단`  
-![alt text](image-3.png)
+![alt text](assets/image-3.png)
 
 `상세 페이지 하단`  
-![alt text](image-4.png)
+![alt text](assets/image-4.png)
 
 - `ANVOLLEH` 버튼 : 랜딩 페이지 복귀
 - 리뷰 `작성` 버튼 : 기입된 리뷰 내용과 별점을 localStorage에 저장후 출력
@@ -109,10 +109,6 @@
     1. 리뷰 내용 공백 불가
     2. 별점 미선택 불가
 - `6개 더볼래?` 좌우측 화살표 버튼 : 상세 페이지 영화 기반 추천 영화 리스트 인기도 순 출력 및 더보기 가능
-
-## ✨ 사용 기술
-
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img  src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img  src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
 ## 📂 프로젝트 구성
 
@@ -146,6 +142,10 @@
 - [index.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/index.html)
 - [movieDetail.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/movieDetail.html)
 
+## ✨ 사용 기술
+
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img  src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img  src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+
 ## 🔗 참고자료
 
 - [TMDB Now Playing API](https://developer.themoviedb.org/reference/movie-now-playing-list)
@@ -155,7 +155,7 @@
 - [TMDB Credits API](https://developer.themoviedb.org/reference/movie-credits)
 - [TMDB Similar API](https://developer.themoviedb.org/reference/movie-similar)
 
-## 👨‍👨‍👦‍👦 팀원
+## 👨‍👨‍👦‍👦 프로젝트 제작 인원
 
 <table>
   <tbody>
