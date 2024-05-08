@@ -41,7 +41,7 @@ export const introduceCard = async () => {
 const introduceDirector = (director) => {
   let profilePath = director.profile_path
     ? `https://www.themoviedb.org/t/p/w138_and_h175_bestv2${director.profile_path}`
-    : `../../assets/nophoto.jpg`;
+    : `./assets/nophoto.jpg`;
   let name = director.name;
   let job = director.job;
   let directorActorCardHTML = `
@@ -59,7 +59,7 @@ const introduceDirector = (director) => {
 const introduceCast = (cast) => {
   let profilePath = cast.profile_path
     ? `https://www.themoviedb.org/t/p/w138_and_h175_bestv2${cast.profile_path}`
-    : `../../assets/nophoto.jpg`;
+    : `./assets/nophoto.jpg`;
   let name = cast.name;
   let character = cast.character;
   let castCardHTML = `
