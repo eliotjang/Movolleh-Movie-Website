@@ -1,367 +1,152 @@
-# Movolleh-Movie-Website
+## 🎬 Movolleh Movie Website
 
-**순수 바닐라 자바스크립트**만을 사용하여 구현한 영화 추천 사이트 입니다. 아래 링크는 배포 링크입니다.
+- [배포 웹사이트 링크](https://eliotjang.github.io/Movolleh-Movie-Website/index.html)
 
-- [Movolleh-Movie-Website]()
+## 📜 프로젝트 기획 및 설계
 
-## 🍓 Layout
+### Minutes of meeting
 
-### 랜딩 페이지
+- [팀 프로젝트 회의록 링크](https://eliotjang.notion.site/2a89927e3bc74e07b317adfa440ee9ea)
 
-- 헤더 : 클릭 시 홈으로 이동하는 홈(MOVOLLEH) 버튼, 웹 페이지를 제작한 팀을 소개하는 Credit 버튼, 영화를 검색할 수 있는 검색 창으로 구성되어 있습니다.
-- 팀 소개글 : 웹 페이지를 소개하는 곳입니다.
-- 영화 목록 : 인기 영화 순으로 나열되어 있으며, 검색 결과로 나타난 영화들이 나열됩니다.
+### TMDB API
 
-### 상세 페이지
+- TMDB open API 사용 이유
+  - 간단하게 사용했던 기존 API에서 다른 API를 사용하며 전체적인 기능을 고루 사용하기 위함
 
-- 헤더 : 클릭 시 홈으로 이동하는 X(ANVOLLEH) 버튼으로 구성되어 있습니다.
-- 좌측 : 검색된 영화에 대한 상세 정보 (영화 포스터, 제목, 내용 요약, 감독 및 출연진)와 리뷰를 나타냅니다.
-- 우측 : 검색된 영화를 기반으로 한 추천 영화들이 나열됩니다.
+### Wireframe
 
-## 🥝 프로젝트 평가 항목
+![alt text](image-9.png)
 
-### 1. **필수 조건**
+- 웹 기반 UI/UX 협업 툴, Figma 사용
+- [Figma 협업 링크](https://www.figma.com/file/s9buq5bmNj29GUb6YuMWEZ/Untitled?type=design&node-id=17-39&mode=design&t=ztDeOEphbsYTa3nz-0)
 
-- [x] 바닐라 자바스크립트 사용하기
-- [x] Github Pull Request를 사용한 협업
-- [x] const와 let만을 이용한 변수 선언 필수
-- [x] TMDB OPEN API 이용
+### Code Convention
 
-### 2. **필수 기능**
+- `.prettierrc` 및 `reset.css` 사용 협업
+- 변수 / 함수명 지정
+  - Camel Case 사용 : `makeCard`
+  - 변수명에 축약어 사용 금지 : `Del(x) Delete(o)`
+  - DOM API 변수명과 클래스명 통일 : `const modal = document.querySelector(".modal")`
+  - 변수명은 명사, 함수명은 동사 사용
+  - 함수 작성 시 상단 주석 필수
+  - 변수 / 함수명 20자 이내
+- Scope 규칙
+  - tap depth 길이 최대 4
+  - 중괄호 앞 공백 추가
+  - 조건문 끝 처리는 else if 사용 지양
+  - Promise 사용 지양 및 async, await 사용 권장
+- 주석 규칙
+  - 한줄 `//`, 두줄 `/* */` 사용
 
-- [x] 영화정보 상세 페이지 구현
-  - [x] 카드 리스트에서 카드 선택시, 상세 페이지로 이동
-  - [x] 상세 페이지에서 메인 페이지로 이동하는 UI 구현
-- [x] 상세 페이지 영화 리뷰 작성 기능 구현
-  - [x] 특정 영화에 대해 의견을 작성할 수 있는 UI 구현
-    - [x] 작성자, 리뷰, 확인비밀번호를 입력하도록 구현
-  - [x] 작성한 정보는 localStorage에 적재하도록 구현
-  - [x] UX를 고려한 validation check
-    - [x] 리뷰 수정 및 삭제 기능 구현 (선택)
+### Github Collaboration Rules
 
-### 3. **필수 문법 구현 목록**
+<!-- ![팀 프로젝트 협업 규칙](image.png){: width="100" height="100"} -->
+<img src="image.png" width="480" height="280">
 
-<details markdown="1">
-  <summary>crewCard.js</summary>
-  <div>
-    <ul>
-      <li>연산자</li>
-        <ul>
-          <li>논리부정(!), 타입(typeof) 사용</li>
-        </ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>조건문</li>
-        <ul>
-          <li>if문</li>
-        </ul>
-      <li>반복문</li>
-        <ul>
-          <li>일반 for문 사용</li>
-        </ul>
-        <ul>
-          <li>for...in문 사용</li>
-        </ul>
-        <ul>
-          <li>do...while문 사용</li>
-        </ul>
-        <ul>
-          <li>반복 제어 명령문 break문 사용</li>
-        </ul>
-      <li>배열</li>
-        <ul>
-          <li>push</li>
-        </ul>
-        <ul>
-          <li>filter</li>
-        </ul>
-      <li>DOM 제어 : getElementById 사용</li>
-      <li>module : import, export</li>
-      <li>undefined를 활용한 '없는 값'에 대한 처리</li>
-    </ul>
-  </div>
-</details>
+### Github branch 생성 및 Pull Request 규칙
 
-<details markdown="1">
-  <summary>movieDetail.js</summary>
-  <div>
-    <ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>DOM 제어 : getElementById 사용</li>
-      <li>module : import, export</li>
-    </ul>
-  </div>
-</details>
+1️⃣ `remote dev branch`에서 `local dev branch`로 `pull`  
+2️⃣ Github issue 생성 이후 `[issue별 자동 생성 브랜치명] branch` 생성
 
-<details markdown="1">
-  <summary>modal.js</summary>
-  <div>
-    <ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>조건문</li>
-        <ul>
-          <li>if문, if-else문</li>
-        </ul>
-      <li>DOM 제어 : getElementById, addEventListener 사용</li>
-      <li>module : import, export</li>
-    </ul>
-  </div>
-</details>
+![alt text](image-1.png)
 
-<details markdown="1">
-  <summary>pagination.js</summary>
-  <div>
-    <ul>
-      <li>연산자</li>
-        <ul>
-          <li>논리곱(&&), 논리부정(!), 삼항연산자(?:) 사용</li>
-        </ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>조건문</li>
-        <ul>
-          <li>if문</li>
-        </ul>
-      <li>반복문</li>
-        <ul>
-          <li>일반 for문 사용</li>
-        </ul>
-      <li>DOM 제어 : getElementById, innerHTML 사용</li>
-      <li>module : import, export</li>
-    </ul>
-  </div>
-</details>
+3️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 기능 구현 완료 후 `remote [issue별 자동 생성 브랜치명] branch`로 add, commit, push  
+4️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 `remote dev branch`로 pull  
+5️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 conflict 해결 후 원격 [issue별 기능 구현] branch로 add, commit, push  
+6️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 원격 dev branch로 pull request
 
-<details markdown="1">
-  <summary>review.js</summary>
-  <div>
-    <ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>조건문</li>
-        <ul>
-          <li>if문</li>
-        </ul>
-      <li>반복문</li>
-        <ul>
-          <li>일반 for문 사용</li>
-        </ul>
-        <ul>
-          <li>for...in문 사용</li>
-        </ul>
-        <ul>
-          <li>do...while문 사용</li>
-        </ul>
-        <ul>
-          <li>반복 제어 명령문 break문 사용</li>
-        </ul>
-      <li>DOM 제어 : querySelector, addEventListener, innerHTML, appendChild 사용</li>
-      <li>module : import, export</li>
-    </ul>
-  </div>
-</details>
+- Issue 內 자동 생성 branch 명칭 수정 금지
 
-<details markdown="1">
-  <summary>search.js</summary>
-  <div>
-    <ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-      <li>조건문</li>
-        <ul>
-          <li>if문, if-else문</li>
-        </ul>
-      <li>DOM 제어 : querySelector, innerHTML 사용</li>
-      <li>module : import, export</li>
-    </ul>
-  </div>
-</details>
+## 💻 프로젝트 설명
 
-<details markdown="1">
-  <summary>api.js</summary>
-  <div>
-    <ul>
-      <li>연산자</li>
-        <ul>
-          <li>삼항연산자(?:) 사용</li>
-        </ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>조건문</li>
-        <ul>
-          <li>if문</li>
-        </ul>
-      <li>module : import, export</li>
-    </ul>
-  </div>
-</details>
+### 🚀 Landing Page
 
-<details markdown="1">
-  <summary>main.js</summary>
-  <div>
-    <ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>조건문</li>
-        <ul>
-          <li>if문</li>
-        </ul>
-      <li>DOM 제어 : addEventListener 사용</li>
-      <li>module : import</li>
-    </ul>
-  </div>
-</details>
+`랜딩페이지 상단`  
+<img src="image-2.png" width="700" height="400">
 
-<details markdown="1">
-  <summary>render.js</summary>
-  <div>
-    <ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>반복문</li>
-        <ul>
-          <li>forEach문</li>
-        </ul>
-      <li>DOM 제어 : querySelector, innerHTML, addEventListener, window.location.href 사용</li>
-      <li>module : import, export</li>
-    </ul>
-  </div>
-</details>
+`랜딩페이지 중단`  
+<img src="image-7.png" width="500" height="400">
 
-<details markdown="1">
-  <summary>similarMovies.js</summary>
-  <div>
-    <ul>
-      <li>화살표 함수</li>
-        <ul>
-          <li>일반 화살표 함수 사용</li>
-        </ul>
-        <ul>
-          <li>매개변수가 1개인 화살표 함수 사용</li>
-        </ul>
-      <li>조건문</li>
-        <ul>
-          <li>if문</li>
-        </ul>
-      <li>반복문</li>
-        <ul>
-          <li>forEach문</li>
-        </ul>
-      <li>배열</li>
-        <ul>
-          <li>slice</li>
-        </ul>
-      <li>DOM 제어 : querySelector, getElementById, addEventListener, appendChild 사용</li>
-      <li>module : import, export</li>
-    </ul>
-  </div>
-</details>
+`랜딩페이지 하단`  
+<img src="image-8.png" width="500" height="400">
 
-### 4. **선택 기능**
+- `MOVOLLEH` 버튼 : 홈페이지 새로고침
+- `Credit` 버튼 : 팀 프로젝트 및 팀원 소개 페이지 이동
+- `검색` 버튼 : 검색 내용을 포함하는 영화 제목 검색
+  - 검색 후 동적 페이지네이션 기능으로 다른 페이지 이동 가능
+- `인기영화 볼래?` : 인기 순으로 영화 정렬 및 더보기 기능
+- `최신영화 볼래?` : 최신 순으로 영화 정렬 및 더보기 기능
+- `최고평점 영화 볼래?` : 최고평점 순으로 영화 정렬 및 더보기 기능
+  - 우측 스크롤 시 더보기 가능
 
-- [x] CSS
-  - [x] flex 사용하기
-  - [x] grid 사용하기
-  - [x] 반응형 UI 구성하기
-- [x] 상세페이지 - 리뷰 수정 및 삭제 기능 구현
-- [x] 메인페이지 - 조건에 맞는 카드 리스트 정렬 기능
+### 😎 Credit Page
 
-## 🥕 Skills
+`팀 프로젝트 및 팀원 소개 페이지`  
+![alt text](image-6.png)
 
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+- `View out GitHub Repository` : 웹페이지 배포 레포지토리 접근
+- `Check out the Live Project` : 웹페이지 배포 링크 접근
+- `Blog` 및 `Github` : 각 팀원의 블로그 및 깃허브 계정 접근
 
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
+### 🧾 Description Page
 
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+`상세 페이지 상단`  
+![alt text](image-3.png)
 
-<img  src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+`상세 페이지 하단`  
+![alt text](image-4.png)
 
-<img  src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+- `ANVOLLEH` 버튼 : 랜딩 페이지 복귀
+- 리뷰 `작성` 버튼 : 기입된 리뷰 내용과 별점을 localStorage에 저장후 출력
+  - Validation Check
+    1. 리뷰 내용 공백 불가
+    2. 별점 미선택 불가
+    3. 기존 리뷰와 동일한 작성자명 불가
+    4. 공백 or 숫자로만 구성된 이름 불가
+    5. 비밀번호 8자 이상, 숫자 및 특수문자 포함 필수
+- 리뷰 `수정` 버튼 : 기입된 리뷰 내용, 별점 수정 이후 비밀번호를 검증하여 localStorage에 재저장후 출력
+  - Validation Check
+    1. 리뷰 내용 공백 불가
+    2. 별점 미선택 불가
+- `6개 더볼래?` 좌우측 화살표 버튼 : 상세 페이지 영화 기반 추천 영화 리스트 인기도 순 출력 및 더보기 가능
 
-## 🍋 Project Configuration
+## ✨ 사용 기술
 
-<details>
-  <summary>src : JavaScript 폴더입니다.</summary>
-  <div markdown="1">
-    <ul>
-      <li>crewDetail : 상세 페이지 좌측의 영화에 대한 상세 정보를 나타냅니다.</li>
-      <li>modal.js : 상세 페이지 좌측 하단의 리뷰 작성 기능에 구현된 모달 창 기능입니다.</li>
-      <li>pagination.js : 랜딩 페이지 하단의 페이지 버튼을 이용하여 원하는 페이지로 이동할 수 있는 기능이 구현되어 있습니다.</li>
-      <li>review.js : 상세 페이지 좌측 하단의 리뷰 작성 기능이 구현되어 있습니다.</li>
-      <li>search.js : 랜딩 페이지 우측 상단의 검색 기능이 구현되어 있습니다.</li>
-      <li>tmdb-api : TMDB API 요청을 처리합니다.</li>
-      <li>main.js : 메인 JS 파일입니다.</li>
-      <li>render.js : 랜딩 페이지에서 영화들을 새롭게 렌더링 하기 이전에 페이지를 초기화 하는 기능이 구현되어 있습니다.</li>
-      <li>similarMovies.js : 상세 페이지 우측의 검색된 영화를 기반으로 한 추천 영화 목록을 나타냅니다.</li>
-      <li>state.js : </li>
-    </ul>
-  </div>
-</details>
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img  src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img  src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
-<details>
-  <summary>style : CSS 폴더입니다.</summary>
-  <div markdown="1">
-    <ul>
-      <li>credit.css : 팀 소개 페이지 CSS 스타일 시트입니다.</li>
-      <li>index.css : 랜딩 페이지 CSS 스타일 시트입니다.</li>
-      <li>movieDetail.css : crewDetail의 CSS 스타일 시트입니다.</li>
-      <li>review.css : review.js의 CSS 스타일 시트입니다.</li>
-      <li>similarMoviesStyle.css : similarMovies.js의 CSS 스타일 시트입니다.</li>
-    </ul>
-  </div>
-</details>
+## 📂 프로젝트 구성
 
-[credit.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/credit.html) : 웹 페이지를 제작한 팀 소개 페이지 HTML 파일입니다.
+- src
+  - crewDetail
+    - [crewCard.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/crewDetail/crewCard.js)
+    - [movieDetail.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/crewDetail/movieDetail.js)
+  - modal
+    - [modal.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/modal/modal.js)
+  - pagination
+    - [pagination.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/pagination/pagination.js)
+  - review
+    - [review.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/review/review.js)
+  - search
+    - [search.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/search/search.js)
+  - tmdb-api
+    - [api.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/tmdb-api/api.js)
+    - [option.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/tmdb-api/option.js)
+  - [main.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/main.js)
+  - [render.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/render.js)
+  - [similarMovies.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/similarMovies.js)
+  - [state.js](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/src/state.js)
+- style
+  - [credit.css](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/style/credit.css)
+  - [index.css](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/style/index.css)
+  - [movieDetail.css](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/style/movieDetail.css)
+  - [reset.css](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/style/reset.css)
+  - [review.css](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/style/review.css)
+  - [similarMoviesStyle.css](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/style/similarMoviesStyle.css)
+- [credit.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/credit.html)
+- [index.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/index.html)
+- [movieDetail.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/movieDetail.html)
 
-[index.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/index.html) : 메인 HTML 파일입니다.
-
-[movieDetail.html](https://github.com/eliotjang/Movolleh-Movie-Website/blob/dev/movieDetail.html) : 영화 상세 페이지 HTML 파일입니다.
-
-## ⛱️ Reference
+## 🔗 참고자료
 
 - [TMDB Now Playing API](https://developer.themoviedb.org/reference/movie-now-playing-list)
 - [TMDB Popular API](https://developer.themoviedb.org/reference/movie-popular-list)
@@ -370,11 +155,7 @@
 - [TMDB Credits API](https://developer.themoviedb.org/reference/movie-credits)
 - [TMDB Similar API](https://developer.themoviedb.org/reference/movie-similar)
 
-## 🍇 팀 프로젝트 설계 회의록
-
-[팀 프로젝트 설계](https://eliotjang.notion.site/2a89927e3bc74e07b317adfa440ee9ea)
-
-## 🍒 팀원 소개
+## 👨‍👨‍👦‍👦 팀원
 
 <table>
   <tbody>
@@ -387,15 +168,3 @@
     </tr>
   </tbody>
 </table>
-
-## 🍑 역할 분담
-
-### 장성원
-
-### 구남욱
-
-### 석한솔
-
-### 손태권
-
-### 방채은
