@@ -69,9 +69,7 @@ export const makeMovieList = () => {
     const $movie = document.createElement("div");
     $movie.className = "movie";
 
-    let imagePath = movie.poster_path
-      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-      : `'../assets/no_img.jpg'`;
+    let imagePath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : `'./assets/no_img.jpg'`;
     $movie.innerHTML = `
         <img class='poster' src=${imagePath}/>
         <h2 class='movieTitle'>${movie.title}</h2>
