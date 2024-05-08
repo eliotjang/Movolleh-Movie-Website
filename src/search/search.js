@@ -2,18 +2,20 @@ import { fetchData, searchData } from "../tmdb-api/api.js";
 import { renderMovieList, makeMovieList } from "../render.js";
 import { updatePageNumbers } from "../pagination/pagination.js";
 import stateManager from "../state.js";
-
+import { movieFilter } from "../pagination/pagination.js";
 export const searchFunc = async () => {
   const currentSearchQuery = stateManager.getState().currentSearchQuery;
   if (currentSearchQuery) {
     console.log(currentSearchQuery);
     try {
-      const data = await searchData();
-      console.log(data.results);
+      let data = await searchData();
+      let total_pages = data.total_pages;
+      data = movieFilter(data);
+      console.log(data);
       stateManager.updateState({
         currentPage: 1,
-        movieData: data.results,
-        total_pages: data.total_pages,
+        movieData: data,
+        total_pages,
         renderType: "searchList"
       });
 

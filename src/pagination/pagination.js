@@ -62,27 +62,37 @@ const goToPage = async (pageNumber) => {
   const state = stateManager.getState();
   if (pageNumber >= 1 && pageNumber <= state.total_pages && pageNumber !== state.currentPage) {
     stateManager.updateState({ currentPage: pageNumber });
-    console.log(state.renderType);
     let data = "";
     switch (state.renderType) {
       case "movieList":
-        data = await fetchData();
-        stateManager.updateState({ topRatedData: data.results });
+        data = movieFilter(await fetchData());
+
+        stateManager.updateState({ topRatedData: data });
 
       case "popularList":
-        data = await fetchPlayingData();
-        stateManager.updateState({ popularData: data.results });
+        data = movieFilter(await fetchPlayingData());
+        stateManager.updateState({ popularData: data });
 
       case "playingList":
-        data = await fetchPlayingData();
-        stateManager.updateState({ playingData: data.results });
+        data = movieFilter(await fetchPlayingData());
+        stateManager.updateState({ playingData: data });
 
       default:
-        data = await fetchData();
-        stateManager.updateState({ movieData: data.results });
+        data = movieFilter(await fetchData());
+        stateManager.updateState({ movieData: data });
     }
     makeMovieList();
     updatePageNumbers();
     setupPaginationButtons();
   }
+};
+
+export const movieFilter = (data) => {
+  let filteredData = data.results.filter((item) => {
+    if (item.poster_path !== null) {
+      console.log(1);
+      return item;
+    }
+  });
+  return filteredData;
 };
