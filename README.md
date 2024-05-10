@@ -6,7 +6,10 @@
 
 ### Minutes of meeting
 
-- [팀 프로젝트 회의록 링크](https://eliotjang.notion.site/2a89927e3bc74e07b317adfa440ee9ea)
+- [팀 프로젝트 S.A. 일정관리](https://eliotjang.notion.site/S-A-8dde9cfd6c864ea3b12a036c48337baf?pvs=4)
+- [팀 프로젝트 회의록](https://eliotjang.notion.site/2a89927e3bc74e07b317adfa440ee9ea)
+- [팀 프로젝트 발표 대본](https://docs.google.com/document/d/1X8udgnwtoX3nIWsoWKdALgqo5hk10tkq0dmO3jR3iJQ/edit?usp=sharing)
+- [팀 프로젝트 포트폴리오](https://docs.google.com/presentation/d/1UNzq1Nac8eSAdEP5GFWPphxbIUfquHSPS7qvoYsIwOU/edit?usp=sharing)
 
 ### TMDB API
 
