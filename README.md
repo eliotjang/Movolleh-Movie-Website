@@ -11,10 +11,14 @@
 - [팀 프로젝트 발표 대본](https://docs.google.com/document/d/1X8udgnwtoX3nIWsoWKdALgqo5hk10tkq0dmO3jR3iJQ/edit?usp=sharing)
 - [팀 프로젝트 포트폴리오](https://docs.google.com/presentation/d/1UNzq1Nac8eSAdEP5GFWPphxbIUfquHSPS7qvoYsIwOU/edit?usp=sharing)
 
-### TMDB API
+### Used TMDB open API
 
-- TMDB open API 사용 이유
-  - 간단하게 사용했던 기존 API에서 다른 API를 사용하며 전체적인 기능을 고루 사용하기 위함
+- [TMDB Now Playing API](https://developer.themoviedb.org/reference/movie-now-playing-list)
+- [TMDB Popular API](https://developer.themoviedb.org/reference/movie-popular-list)
+- [TMDB Top Rated API](https://developer.themoviedb.org/reference/movie-top-rated-list)
+- [TMDB Details API](https://developer.themoviedb.org/reference/movie-details)
+- [TMDB Credits API](https://developer.themoviedb.org/reference/movie-credits)
+- [TMDB Similar API](https://developer.themoviedb.org/reference/movie-similar)
 
 ### Wireframe
 
@@ -48,17 +52,14 @@
 
 ### Github branch 생성 및 Pull Request 규칙
 
-1️⃣ `remote dev branch`에서 `local dev branch`로 `pull`  
-2️⃣ Github issue 생성 이후 `[issue별 자동 생성 브랜치명] branch` 생성
+1️. remote `dev` branch에서 local `dev` branch로 pull  
+2️. Github issue 생성 이후 `[issue별 자동 생성 브랜치명]` branch 생성
+3️. local `[issue별 자동 생성 브랜치명]` branch에서 기능 구현 완료 후 remote `[issue별 자동 생성 브랜치명]` branch로 add, commit, push  
+4️. local `[issue별 자동 생성 브랜치명]` branch에서 remote `dev` branch로 pull  
+5️. local `[issue별 자동 생성 브랜치명]` branch에서 conflict 해결 후 remote `[issue별 자동 생성 브랜치명]` branch로 add, commit, push  
+6️. local `[issue별 자동 생성 브랜치명]` branch에서 remote `dev` branch로 pull request
 
-![alt text](assets/image-1.png)
-
-3️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 기능 구현 완료 후 `remote [issue별 자동 생성 브랜치명] branch`로 add, commit, push  
-4️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 `remote dev branch`로 pull  
-5️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 conflict 해결 후 원격 [issue별 기능 구현] branch로 add, commit, push  
-6️⃣ `local [issue별 자동 생성 브랜치명] branch`에서 원격 dev branch로 pull request
-
-- Issue 內 자동 생성 branch 명칭 수정 금지
+주의사항 : Issue 內 자동 생성 branch 명칭 수정 금지
 
 ## 💻 프로젝트 설명
 
@@ -148,15 +149,6 @@
 ## ✨ 사용 기술
 
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img  src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img  src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-
-## 🔗 참고자료
-
-- [TMDB Now Playing API](https://developer.themoviedb.org/reference/movie-now-playing-list)
-- [TMDB Popular API](https://developer.themoviedb.org/reference/movie-popular-list)
-- [TMDB Top Rated API](https://developer.themoviedb.org/reference/movie-top-rated-list)
-- [TMDB Details API](https://developer.themoviedb.org/reference/movie-details)
-- [TMDB Credits API](https://developer.themoviedb.org/reference/movie-credits)
-- [TMDB Similar API](https://developer.themoviedb.org/reference/movie-similar)
 
 ## 👨‍👨‍👦‍👦 프로젝트 제작 인원
 
